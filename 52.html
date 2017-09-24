@@ -1,0 +1,1375 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="树莓派," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Bingo's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言我一直想要入手树莓派，却一直没有买，因为没有时间折腾。但是阿里云香港服务器真的太贵了啊，只拿来开 SS Server 太浪费了。服务器马上又到期了，我不想再续费了。所以想买个树莓派当服务器，我的个人博客、爬虫之类的 python 脚本等就部署在树莓派上。树莓派到手之后，一次点亮，记录一下过程。">
+<meta name="keywords" content="树莓派">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派入门">
+<meta property="og:url" content="https://bingozb.github.io/52.html">
+<meta property="og:site_name" content="Bingo's Blog">
+<meta property="og:description" content="前言我一直想要入手树莓派，却一直没有买，因为没有时间折腾。但是阿里云香港服务器真的太贵了啊，只拿来开 SS Server 太浪费了。服务器马上又到期了，我不想再续费了。所以想买个树莓派当服务器，我的个人博客、爬虫之类的 python 脚本等就部署在树莓派上。树莓派到手之后，一次点亮，记录一下过程。">
+<meta property="og:image" content="https://bingozb.github.io/images/blog/52/raspberry_logo.png">
+<meta property="og:image" content="https://bingozb.github.io/images/blog/52/Raspberry-Pi-3.png">
+<meta property="og:image" content="https://bingozb.github.io/images/blog/52/device.png">
+<meta property="og:updated_time" content="2017-09-23T00:08:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="树莓派入门">
+<meta name="twitter:description" content="前言我一直想要入手树莓派，却一直没有买，因为没有时间折腾。但是阿里云香港服务器真的太贵了啊，只拿来开 SS Server 太浪费了。服务器马上又到期了，我不想再续费了。所以想买个树莓派当服务器，我的个人博客、爬虫之类的 python 脚本等就部署在树莓派上。树莓派到手之后，一次点亮，记录一下过程。">
+<meta name="twitter:image" content="https://bingozb.github.io/images/blog/52/raspberry_logo.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'JE30EVH7NI',
+      apiKey: '862bb3deb9a3166ed99de0be6527f59c',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键词进行搜索","hits_empty":"找不到关于「 ${query} 」的文章","hits_stats":"共找到 ${hits} 篇文章，花了 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bingozb.github.io/52.html"/>
+
+
+
+
+
+  <title>树莓派入门 | Bingo's Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c8a59b9753bce3ec58f81c89e2acce96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bingo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Stay Hungry, Stay Foolish.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bingozb.github.io/52.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bingo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                树莓派入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T13:35:49+08:00">
+                2017-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/战斗笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">战斗笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/52.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="52.html" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/52.html" class="leancloud_visitors" data-flag-title="树莓派入门">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/blog/52/raspberry_logo.png" alt="raspberryPi"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我一直想要入手树莓派，却一直没有买，因为没有时间折腾。但是阿里云香港服务器真的太贵了啊，只拿来开 SS Server 太浪费了。服务器马上又到期了，我不想再续费了。所以想买个树莓派当服务器，我的个人博客、爬虫之类的 python 脚本等就部署在树莓派上。树莓派到手之后，一次点亮，记录一下过程。</p>
+<a id="more"></a>
+<h2 id="树莓派"><a href="#树莓派" class="headerlink" title="树莓派"></a>树莓派</h2><p>官网 <a href="https://www.raspberrypi.org" target="_blank" rel="external">https://www.raspberrypi.org</a></p>
+<p>Raspberry Pi (中文名为“树莓派”，简写为 RPi，或者 RasPi / RPI)，是一个 Arm 的开发板，为学生计算机编程教育而设计，只有银行卡大小的卡片式电脑，其系统基于 Linux。当前最新版的是树莓派 <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/" target="_blank" rel="external">RASPBERRY PI 3 MODEL B</a>。</p>
+<p><img src="/images/blog/52/Raspberry-Pi-3.png" alt="Raspberry Pi"></p>
+<h3 id="树莓派能做什么"><a href="#树莓派能做什么" class="headerlink" title="树莓派能做什么?"></a>树莓派能做什么?</h3><p>就像其他任何一台运行 Linux 系统的台式计算机或者便携式计算机那样，利用Raspberry Pi 可以做很多事情。当然，也难免有一点点不同。普通的计算机主板都是依靠硬盘来存储数据，但是 Raspberry Pi 使用 SD 卡作为“硬盘”，你也可以外接 USB 硬盘。</p>
+<p><img src="/images/blog/52/device.png" alt="device"></p>
+<p>利用 Raspberry Pi 可以编辑 Office 文档、浏览网页、玩游戏，即使玩需要强大的图形加速器支持的游戏也没有问题。Raspberry Pi 的低价意味着其用途更加广泛，将其打造成卓越的多媒体中心也是一个不错的选择。利用 Raspberry Pi 可以播放视频，甚至可以通过电视机的 USB 接口供电等。</p>
+<h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><p>去官网的下载地址 <a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/</a>，下载所需的系统镜像。</p>
+<p>我选择了官方的系统 Raspbian OS：</p>
+<ul>
+<li>2017-09-07-raspbian-stretch-lite.img (纯终端)</li>
+<li>2017-09-07-raspbian-stretch.img (图形界面)</li>
+</ul>
+<h3 id="烧录镜像到-SD-卡"><a href="#烧录镜像到-SD-卡" class="headerlink" title="烧录镜像到 SD 卡"></a>烧录镜像到 SD 卡</h3><h4 id="查看磁盘"><a href="#查看磁盘" class="headerlink" title="查看磁盘"></a>查看磁盘</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ df -h</div><div class="line">Filesystem      Size   Used  Avail Capacity iused      ifree %iused  Mounted on</div><div class="line">/dev/disk1     233Gi  222Gi   10Gi    96% 3309169 4291658110    0%   /</div><div class="line">devfs          192Ki  192Ki    0Bi   100%     664          0  100%   /dev</div><div class="line">map -hosts       0Bi    0Bi    0Bi   100%       0          0  100%   /net</div><div class="line">map auto_home    0Bi    0Bi    0Bi   100%       0          0  100%   /home</div></pre></td></tr></table></figure>
+<p>插上已经插好SD卡的读卡器，然后再次查看磁盘。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ df -h</div><div class="line">Filesystem      Size   Used  Avail Capacity iused      ifree %iused  Mounted on</div><div class="line">/dev/disk1     233Gi  222Gi   10Gi    96% 3309169 4291658110    0%   /</div><div class="line">devfs          192Ki  192Ki    0Bi   100%     664          0  100%   /dev</div><div class="line">map -hosts       0Bi    0Bi    0Bi   100%       0          0  100%   /net</div><div class="line">map auto_home    0Bi    0Bi    0Bi   100%       0          0  100%   /home</div><div class="line">/dev/disk2s1    16Gi  1.6Mi   16Gi     1%       0          0  100%   /Volumes/sdcard</div></pre></td></tr></table></figure>
+<p>多出来的最后一个就是 SD 卡的，记住磁盘叫<code>/dev/disk2s1</code>。</p>
+<h4 id="卸载磁盘"><a href="#卸载磁盘" class="headerlink" title="卸载磁盘"></a>卸载磁盘</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo diskutil umount /dev/disk2s1</div><div class="line">Volume 21 on disk2s1 unmounted</div></pre></td></tr></table></figure>
+<h4 id="写入镜像"><a href="#写入镜像" class="headerlink" title="写入镜像"></a>写入镜像</h4><p>使用 dd 命令写入镜像至 SD 卡</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ sudo dd bs=4m if=/path/to/your/raspbian-jessie.img of=/dev/rdisk2</div><div class="line">4125+0 records in          </div><div class="line">4125+0 records out</div><div class="line">4325376000 bytes transferred in 401.205151 secs (10780958 bytes/sec)</div></pre></td></tr></table></figure>
+<ul>
+<li><code>dd</code> 命令可以覆写任何分区，如果在指令中指定了错误的设备，有可能会删除原有的操作系统，直接删除了设备上所有的数据，请谨慎填写 <code>of</code> 地址！</li>
+<li><code>bs</code> 代表一次写入多大的块，是 blocksize 的缩写，4m一般都没问题，如果不行，试试改成1m。</li>
+<li><code>if</code> 参数为下载的镜像的路径，是 input file 的缩写。</li>
+<li><code>of</code> 参数为设备地址，是 output file 的缩写。</li>
+</ul>
+<p>注意：<code>of</code> 输出文件是设备的原始名称，没有最后的<code>s1</code>，且前面需要加个<code>r</code>，例如<code>/dev/disk2s1</code>对应的输出文件是<code>/dev/rdisk2</code>。</p>
+<h3 id="启动系统"><a href="#启动系统" class="headerlink" title="启动系统"></a>启动系统</h3><p>将 SD 卡插入树莓派卡槽，接通电源，树莓派即可正常启动。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="安装VIM"><a href="#安装VIM" class="headerlink" title="安装VIM"></a>安装VIM</h4><p>vim默认无法使用，需要重新安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 更新软件源列表</div><div class="line">$ sudo apt-get update</div><div class="line"># 更新系统</div><div class="line">$ sudo apt-get upgrade</div><div class="line"># 删除vim</div><div class="line">$ sudo apt-get remove vim-common</div><div class="line"># 安装vim</div><div class="line">$ sudo apt-get install vim</div></pre></td></tr></table></figure>
+<h4 id="安装中文字体"><a href="#安装中文字体" class="headerlink" title="安装中文字体"></a>安装中文字体</h4><p>RASPBIAN 系统默认不支持中文，需要自己安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</div></pre></td></tr></table></figure>
+<h3 id="配置ROOT用户"><a href="#配置ROOT用户" class="headerlink" title="配置ROOT用户"></a>配置ROOT用户</h3><p>树莓派系统使用的 linux 是 debian 系统，所以树莓派启用 root 和 debian 是相同的。debian 里 root 账户默认没有密码，但账户锁定。</p>
+<p>当需要 root 权限时，由默认账户经由 sudo 执行，Raspberry pi 系统中的 root 用户默认没有启用，也不知道密码，需要先进行修改。</p>
+<p>默认主机名是 <code>raspberrypi</code>，默认用户是 <code>pi</code>，密码是 <code>raspberry</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo passwd root</div><div class="line">Enter new UNIX password:</div><div class="line">Retype new UNIX password:</div></pre></td></tr></table></figure>
+<p>启用 root 用户：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo passwd --unlock root</div><div class="line">passwd: password expiry information changed.</div></pre></td></tr></table></figure>
+<p>解锁 root 用户：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ su root</div><div class="line">$ vim /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
+<p>把 <code>PermitRootLogin</code> 的配置修改为 <code>yes</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#PermitRootLogin without-password</div><div class="line">PermitRootLogin yes</div></pre></td></tr></table></figure>
+<p>最后 <code>reboot</code> 重启，就可以 SSH 使用 root 用户登录了。</p>
+<h3 id="解决显示问题"><a href="#解决显示问题" class="headerlink" title="解决显示问题"></a>解决显示问题</h3><p>我的显示器有 VGA 和 HDMI 两个接口，而我有两条线，一条是 VGA 转 HDMI 给华硕笔记本用，一条是 HDMI 转雷电接口给 Macbook Pro 用。所以我就用 VGA 转 HDMI 来连接树莓派，但是连接显示器后，黑屏了。</p>
+<p>解决办法：<strong>修改 SD 卡 boot 分区的 config.txt 文件</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /boot/config.txt</div></pre></td></tr></table></figure>
+<p>修改以下参数，其它可以注释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">disable_overscan=1</div><div class="line">hdmi_force_hotplug=1</div><div class="line">hdmi_group=2</div><div class="line">hdmi_mode=83</div><div class="line">hdmi_drive=2</div><div class="line">config_hdmi_boost=4</div></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li><code>hdmi_safe=1</code> 必须注释掉。否则当 <code>hdmi_safe</code> 设置为1时，<code>hdmi_group</code>和<code>hdmi_mode</code>默认都为1，且不可修改。</li>
+<li><code>hdmi_group</code> 要设为2。<ul>
+<li>当<code>hdmi_group</code>为1时，对应的是电视规格 CEA 分辨率。</li>
+<li>当<code>hdmi_group</code>为2时，对应的是计算机显示器使用的 DMT 分辨率。</li>
+</ul>
+</li>
+<li><code>hdmi_mode</code> 为想要调整的分辨率，具体根据显示器分辨率自行调整，对应的值如下。</li>
+</ul>
+<h4 id="CEA分辨率"><a href="#CEA分辨率" class="headerlink" title="CEA分辨率"></a>CEA分辨率</h4><p>以下是 CEA 规定的电视规格分辨率，对应的 hdmi_group 为1。</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="attr">hdmi_mode=1</span>    VGA</div><div class="line"><span class="attr">hdmi_mode=2</span>    <span class="number">480</span>p  <span class="number">60</span>Hz</div><div class="line"><span class="attr">hdmi_mode=3</span>    <span class="number">480</span>p  <span class="number">60</span>Hz  H</div><div class="line"><span class="attr">hdmi_mode=4</span>    <span class="number">720</span>p  <span class="number">60</span>Hz</div><div class="line"><span class="attr">hdmi_mode=5</span>    <span class="number">1080</span>i <span class="number">60</span>Hz</div><div class="line"><span class="attr">hdmi_mode=6</span>    <span class="number">480</span>i  <span class="number">60</span>Hz</div><div class="line"><span class="attr">hdmi_mode=7</span>    <span class="number">480</span>i  <span class="number">60</span>Hz  H</div><div class="line"><span class="attr">hdmi_mode=8</span>    <span class="number">240</span>p  <span class="number">60</span>Hz</div><div class="line"><span class="attr">hdmi_mode=9</span>    <span class="number">240</span>p  <span class="number">60</span>Hz  H</div><div class="line"><span class="attr">hdmi_mode=10</span>   <span class="number">480</span>i  <span class="number">60</span>Hz  <span class="number">4</span>x</div><div class="line"><span class="attr">hdmi_mode=11</span>   <span class="number">480</span>i  <span class="number">60</span>Hz  <span class="number">4</span>x H</div><div class="line"><span class="attr">hdmi_mode=12</span>   <span class="number">240</span>p  <span class="number">60</span>Hz  <span class="number">4</span>x</div><div class="line"><span class="attr">hdmi_mode=13</span>   <span class="number">240</span>p  <span class="number">60</span>Hz  <span class="number">4</span>x H</div><div class="line"><span class="attr">hdmi_mode=14</span>   <span class="number">480</span>p  <span class="number">60</span>Hz  <span class="number">2</span>x</div><div class="line"><span class="attr">hdmi_mode=15</span>   <span class="number">480</span>p  <span class="number">60</span>Hz  <span class="number">2</span>x H</div><div class="line"><span class="attr">hdmi_mode=16</span>   <span class="number">1080</span>p <span class="number">60</span>Hz</div><div class="line"><span class="attr">hdmi_mode=17</span>   <span class="number">576</span>p  <span class="number">50</span>Hz</div><div class="line"><span class="attr">hdmi_mode=18</span>   <span class="number">576</span>p  <span class="number">50</span>Hz  H</div><div class="line"><span class="attr">hdmi_mode=19</span>   <span class="number">720</span>p  <span class="number">50</span>Hz</div><div class="line"><span class="attr">hdmi_mode=20</span>   <span class="number">1080</span>i <span class="number">50</span>Hz</div><div class="line"><span class="attr">hdmi_mode=21</span>   <span class="number">576</span>i  <span class="number">50</span>Hz</div><div class="line"><span class="attr">hdmi_mode=22</span>   <span class="number">576</span>i  <span class="number">50</span>Hz  H</div><div class="line"><span class="attr">hdmi_mode=23</span>   <span class="number">288</span>p  <span class="number">50</span>Hz</div><div class="line"><span class="attr">hdmi_mode=24</span>   <span class="number">288</span>p  <span class="number">50</span>Hz  H</div><div class="line"><span class="attr">hdmi_mode=25</span>   <span class="number">576</span>i  <span class="number">50</span>Hz  <span class="number">4</span>x</div><div class="line"><span class="attr">hdmi_mode=26</span>   <span class="number">576</span>i  <span class="number">50</span>Hz  <span class="number">4</span>x H</div><div class="line"><span class="attr">hdmi_mode=27</span>   <span class="number">288</span>p  <span class="number">50</span>Hz  <span class="number">4</span>x</div><div class="line"><span class="attr">hdmi_mode=28</span>   <span class="number">288</span>p  <span class="number">50</span>Hz  <span class="number">4</span>x H</div><div class="line"><span class="attr">hdmi_mode=29</span>   <span class="number">576</span>p  <span class="number">50</span>Hz  <span class="number">2</span>x</div><div class="line"><span class="attr">hdmi_mode=30</span>   <span class="number">576</span>p  <span class="number">50</span>Hz  <span class="number">2</span>x H</div><div class="line"><span class="attr">hdmi_mode=31</span>   <span class="number">1080</span>p <span class="number">50</span>Hz</div><div class="line"><span class="attr">hdmi_mode=32</span>   <span class="number">1080</span>p <span class="number">24</span>Hz</div><div class="line"><span class="attr">hdmi_mode=33</span>   <span class="number">1080</span>p <span class="number">25</span>Hz</div><div class="line"><span class="attr">hdmi_mode=34</span>   <span class="number">1080</span>p <span class="number">30</span>Hz</div><div class="line"><span class="attr">hdmi_mode=35</span>   <span class="number">480</span>p  <span class="number">60</span>Hz  <span class="number">4</span>x</div><div class="line"><span class="attr">hdmi_mode=36</span>   <span class="number">480</span>p  <span class="number">60</span>Hz  <span class="number">4</span>xH</div><div class="line"><span class="attr">hdmi_mode=37</span>   <span class="number">576</span>p  <span class="number">50</span>Hz  <span class="number">4</span>x</div><div class="line"><span class="attr">hdmi_mode=38</span>   <span class="number">576</span>p  <span class="number">50</span>Hz  <span class="number">4</span>x H</div><div class="line"><span class="attr">hdmi_mode=39</span>   <span class="number">1080</span>i <span class="number">50</span>Hz  reduced blanking</div><div class="line"><span class="attr">hdmi_mode=40</span>   <span class="number">1080</span>i <span class="number">100</span>Hz</div><div class="line"><span class="attr">hdmi_mode=41</span>   <span class="number">720</span>p  <span class="number">100</span>Hz</div><div class="line"><span class="attr">hdmi_mode=42</span>   <span class="number">576</span>p  <span class="number">100</span>Hz</div><div class="line"><span class="attr">hdmi_mode=43</span>   <span class="number">576</span>p  <span class="number">100</span>Hz H</div><div class="line"><span class="attr">hdmi_mode=44</span>   <span class="number">576</span>i  <span class="number">100</span>Hz</div><div class="line"><span class="attr">hdmi_mode=45</span>   <span class="number">576</span>i  <span class="number">100</span>Hz H</div><div class="line"><span class="attr">hdmi_mode=46</span>   <span class="number">1080</span>i <span class="number">120</span>Hz</div><div class="line"><span class="attr">hdmi_mode=47</span>   <span class="number">720</span>p  <span class="number">120</span>Hz</div><div class="line"><span class="attr">hdmi_mode=48</span>   <span class="number">480</span>p  <span class="number">120</span>Hz</div><div class="line"><span class="attr">hdmi_mode=49</span>   <span class="number">480</span>p  <span class="number">120</span>Hz H</div><div class="line"><span class="attr">hdmi_mode=50</span>   <span class="number">480</span>i  <span class="number">120</span>Hz</div><div class="line"><span class="attr">hdmi_mode=51</span>   <span class="number">480</span>i  <span class="number">120</span>Hz H</div><div class="line"><span class="attr">hdmi_mode=52</span>   <span class="number">576</span>p  <span class="number">200</span>Hz</div><div class="line"><span class="attr">hdmi_mode=53</span>   <span class="number">576</span>p  <span class="number">200</span>Hz H</div><div class="line"><span class="attr">hdmi_mode=54</span>   <span class="number">576</span>i  <span class="number">200</span>Hz</div><div class="line"><span class="attr">hdmi_mode=55</span>   <span class="number">576</span>i  <span class="number">200</span>Hz H</div><div class="line"><span class="attr">hdmi_mode=56</span>   <span class="number">480</span>p  <span class="number">240</span>Hz</div><div class="line"><span class="attr">hdmi_mode=57</span>   <span class="number">480</span>p  <span class="number">240</span>Hz H</div><div class="line"><span class="attr">hdmi_mode=58</span>   <span class="number">480</span>i  <span class="number">240</span>Hz</div><div class="line"><span class="attr">hdmi_mode=59</span>   <span class="number">480</span>i  <span class="number">240</span>Hz H</div><div class="line">H means <span class="number">16</span>:<span class="number">9</span> variant (of a normally <span class="number">4</span>:<span class="number">3</span> mode).</div><div class="line"><span class="number">2</span>x means pixel doubled (i.e. higher clock rate, <span class="keyword">with</span> each pixel repeated twice)</div><div class="line"><span class="number">4</span>x means pixel quadrupled (i.e. higher clock rate, <span class="keyword">with</span> each pixel repeated four times)</div></pre></td></tr></table></figure>
+<h4 id="DMT分辨率"><a href="#DMT分辨率" class="headerlink" title="DMT分辨率"></a>DMT分辨率</h4><p>以下是计算机显示器使用的分辨率，对应的 hdmi_group 为2。</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line">hdmi_mode=<span class="number">1</span>    <span class="number">640</span>x350   <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">2</span>    <span class="number">640</span>x400   <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">3</span>    <span class="number">720</span>x400   <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">4</span>    <span class="number">640</span>x480   <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">5</span>    <span class="number">640</span>x480   <span class="number">72</span>Hz</div><div class="line">hdmi_mode=<span class="number">6</span>    <span class="number">640</span>x480   <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">7</span>    <span class="number">640</span>x480   <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">8</span>    <span class="number">800</span>x600   <span class="number">56</span>Hz</div><div class="line">hdmi_mode=<span class="number">9</span>    <span class="number">800</span>x600   <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">10</span>   <span class="number">800</span>x600   <span class="number">72</span>Hz</div><div class="line">hdmi_mode=<span class="number">11</span>   <span class="number">800</span>x600   <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">12</span>   <span class="number">800</span>x600   <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">13</span>   <span class="number">800</span>x600   <span class="number">120</span>Hz</div><div class="line">hdmi_mode=<span class="number">14</span>   <span class="number">848</span>x480   <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">15</span>   <span class="number">1024</span>x768  <span class="number">43</span>Hz  DO NOT USE</div><div class="line">hdmi_mode=<span class="number">16</span>   <span class="number">1024</span>x768  <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">17</span>   <span class="number">1024</span>x768  <span class="number">70</span>Hz</div><div class="line">hdmi_mode=<span class="number">18</span>   <span class="number">1024</span>x768  <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">19</span>   <span class="number">1024</span>x768  <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">20</span>   <span class="number">1024</span>x768  <span class="number">120</span>Hz</div><div class="line">hdmi_mode=<span class="number">21</span>   <span class="number">1152</span>x864  <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">22</span>   <span class="number">1280</span>x768        reduced blanking</div><div class="line">hdmi_mode=<span class="number">23</span>   <span class="number">1280</span>x768  <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">24</span>   <span class="number">1280</span>x768  <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">25</span>   <span class="number">1280</span>x768  <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">26</span>   <span class="number">1280</span>x768  <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">27</span>   <span class="number">1280</span>x800        reduced blanking</div><div class="line">hdmi_mode=<span class="number">28</span>   <span class="number">1280</span>x800  <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">29</span>   <span class="number">1280</span>x800  <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">30</span>   <span class="number">1280</span>x800  <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">31</span>   <span class="number">1280</span>x800  <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">32</span>   <span class="number">1280</span>x960  <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">33</span>   <span class="number">1280</span>x960  <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">34</span>   <span class="number">1280</span>x960  <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">35</span>   <span class="number">1280</span>x1024 <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">36</span>   <span class="number">1280</span>x1024 <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">37</span>   <span class="number">1280</span>x1024 <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">38</span>   <span class="number">1280</span>x1024 <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">39</span>   <span class="number">1360</span>x768  <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">40</span>   <span class="number">1360</span>x768  <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">41</span>   <span class="number">1400</span>x1050       reduced blanking</div><div class="line">hdmi_mode=<span class="number">42</span>   <span class="number">1400</span>x1050 <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">43</span>   <span class="number">1400</span>x1050 <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">44</span>   <span class="number">1400</span>x1050 <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">45</span>   <span class="number">1400</span>x1050 <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">46</span>   <span class="number">1440</span>x900        reduced blanking</div><div class="line">hdmi_mode=<span class="number">47</span>   <span class="number">1440</span>x900  <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">48</span>   <span class="number">1440</span>x900  <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">49</span>   <span class="number">1440</span>x900  <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">50</span>   <span class="number">1440</span>x900  <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">51</span>   <span class="number">1600</span>x1200 <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">52</span>   <span class="number">1600</span>x1200 <span class="number">65</span>Hz</div><div class="line">hdmi_mode=<span class="number">53</span>   <span class="number">1600</span>x1200 <span class="number">70</span>Hz</div><div class="line">hdmi_mode=<span class="number">54</span>   <span class="number">1600</span>x1200 <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">55</span>   <span class="number">1600</span>x1200 <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">56</span>   <span class="number">1600</span>x1200 <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">57</span>   <span class="number">1680</span>x1050       reduced blanking</div><div class="line">hdmi_mode=<span class="number">58</span>   <span class="number">1680</span>x1050 <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">59</span>   <span class="number">1680</span>x1050 <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">60</span>   <span class="number">1680</span>x1050 <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">61</span>   <span class="number">1680</span>x1050 <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">62</span>   <span class="number">1792</span>x1344 <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">63</span>   <span class="number">1792</span>x1344 <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">64</span>   <span class="number">1792</span>x1344 <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">65</span>   <span class="number">1856</span>x1392 <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">66</span>   <span class="number">1856</span>x1392 <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">67</span>   <span class="number">1856</span>x1392 <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">68</span>   <span class="number">1920</span>x1200       reduced blanking</div><div class="line">hdmi_mode=<span class="number">69</span>   <span class="number">1920</span>x1200 <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">70</span>   <span class="number">1920</span>x1200 <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">71</span>   <span class="number">1920</span>x1200 <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">72</span>   <span class="number">1920</span>x1200 <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">73</span>   <span class="number">1920</span>x1440 <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">74</span>   <span class="number">1920</span>x1440 <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">75</span>   <span class="number">1920</span>x1440 <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">76</span>   <span class="number">2560</span>x1600       reduced blanking</div><div class="line">hdmi_mode=<span class="number">77</span>   <span class="number">2560</span>x1600 <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">78</span>   <span class="number">2560</span>x1600 <span class="number">75</span>Hz</div><div class="line">hdmi_mode=<span class="number">79</span>   <span class="number">2560</span>x1600 <span class="number">85</span>Hz</div><div class="line">hdmi_mode=<span class="number">80</span>   <span class="number">2560</span>x1600 <span class="number">120</span>Hz reduced blanking</div><div class="line">hdmi_mode=<span class="number">81</span>   <span class="number">1366</span>x768  <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">82</span>   <span class="number">1080</span>p     <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">83</span>   <span class="number">1600</span>x900        reduced blanking</div><div class="line">hdmi_mode=<span class="number">84</span>   <span class="number">2048</span>x1152       reduced blanking</div><div class="line">hdmi_mode=<span class="number">85</span>   <span class="number">720</span>p      <span class="number">60</span>Hz</div><div class="line">hdmi_mode=<span class="number">86</span>   <span class="number">1366</span>x768        reduced blanking</div></pre></td></tr></table></figure>
+<p>我的 23.5 寸的显示器，选择 <code>hdmi_group=2 hdmi_mode=83</code> 刚好合适，显示完美。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>使用 Oneinstack 搭建我的服务器环境，发现 Redis 安装失败了，似乎不支持 ROS。</p>
+<p>发现性能很差，原本在阿里云1核1G的云主机需要花10分钟的编译任务，在树莓派上花了50分钟才跑完。</p>
+<p>如果只是放一些静态页面例如博客，可以考虑入手。如果想放一些类似 JavaEE 的大项目，内存不够用，CPU运算也慢，就算了吧。还有，当服务器的话，最好选择 CentOS 系统，并且不要装图形界面，省系统空间，也省性能开销。而实时也证明，想拿树莓派搭建家庭影院还是太弱了，至少我看视频总会感觉有点卡。</p>
+<p><strong>CentOS 镜像</strong>：<a href="http://mirror.centos.org/altarch/7/isos/armhfp/CentOS-Userland-7-armv7hl-Minimal-1708-RaspberryPi3.img.xz" target="_blank" rel="external">CentOS-Userland-7-armv7hl-Minimal-1708-RaspberryPi3.img.xz</a></p>
+<h2 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h2><p>总结一下，树莓派，体积小，性能一般，可以当开发测试服务器，不适用于生产环境以及大型项目的部署。</p>
+<p>最后使用 linux_arm 版本的 frp，使用端口映射，成功让我的树莓派服务器上线了。暂时就先捣鼓到这里，没时间再搞了，以后有空再继续学做机器人啥的。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Bingo
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://bingozb.github.io/52.html" title="树莓派入门">https://bingozb.github.io/52.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 MIT 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/树莓派/" rel="tag"># 树莓派</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/53.html" rel="next" title="MacOS使用Homebrew安装的OpenSSL">
+                <i class="fa fa-chevron-left"></i> MacOS使用Homebrew安装的OpenSSL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/51.html" rel="prev" title="phantomjs实现服务端屏幕截图">
+                phantomjs实现服务端屏幕截图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Bingo" />
+          <p class="site-author-name" itemprop="name">Bingo</p>
+           
+              <p class="site-description motion-element" itemprop="description">He who hesitates is lost.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/bingozb" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/bingozb" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-git"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/bingo_v587" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/profile.php?id=100013406670597" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派"><span class="nav-number">2.</span> <span class="nav-text">树莓派</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#树莓派能做什么"><span class="nav-number">2.1.</span> <span class="nav-text">树莓派能做什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载镜像"><span class="nav-number">2.2.</span> <span class="nav-text">下载镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#烧录镜像到-SD-卡"><span class="nav-number">2.3.</span> <span class="nav-text">烧录镜像到 SD 卡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看磁盘"><span class="nav-number">2.3.1.</span> <span class="nav-text">查看磁盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卸载磁盘"><span class="nav-number">2.3.2.</span> <span class="nav-text">卸载磁盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写入镜像"><span class="nav-number">2.3.3.</span> <span class="nav-text">写入镜像</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动系统"><span class="nav-number">2.4.</span> <span class="nav-text">启动系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.5.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装VIM"><span class="nav-number">2.5.1.</span> <span class="nav-text">安装VIM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装中文字体"><span class="nav-number">2.5.2.</span> <span class="nav-text">安装中文字体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置ROOT用户"><span class="nav-number">2.6.</span> <span class="nav-text">配置ROOT用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决显示问题"><span class="nav-number">2.7.</span> <span class="nav-text">解决显示问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CEA分辨率"><span class="nav-number">2.7.1.</span> <span class="nav-text">CEA分辨率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DMT分辨率"><span class="nav-number">2.7.2.</span> <span class="nav-text">DMT分辨率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后话"><span class="nav-number">4.</span> <span class="nav-text">后话</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  Copyright © 
+  <span itemprop="copyrightYear">2017
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bingo
+  </span>
+  All rights reserved.
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytcdzpa3';
+      var conf = 'c0c6117021d1cea9f11629100efd8446';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      $('#local-search-input').focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("A9MeTkIR49W9kOOSvkggsXge-gzGzoHsz", "HaIEOSDyxpcjwOjRjCYxiWjA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

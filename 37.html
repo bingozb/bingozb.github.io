@@ -80,6 +80,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Bingo's Blog" type="application/atom+xml" />
+
 
 
 
@@ -97,7 +99,7 @@
 <meta property="og:url" content="https://bingozb.github.io/37.html">
 <meta property="og:site_name" content="Bingo's Blog">
 <meta property="og:description" content="前言iOS 项目多人协作开发的时候，一言不合就有冲突。冷静分析，这里面有坑，有老梗，也有一些是可以规避的，.gitignore就是一个避免冲突的利器。">
-<meta property="og:updated_time" content="2017-04-20T12:49:12.000Z">
+<meta property="og:updated_time" content="2017-09-04T19:06:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS项目的.gitignore配置">
 <meta name="twitter:description" content="前言iOS 项目多人协作开发的时候，一言不合就有冲突。冷静分析，这里面有坑，有老梗，也有一些是可以规避的，.gitignore就是一个避免冲突的利器。">
@@ -113,15 +115,15 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '0',
-      author: 'bingozb'
+      userId: 'undefined',
+      author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'JE30EVH7NI',
+      apiKey: '862bb3deb9a3166ed99de0be6527f59c',
+      indexName: 'blog',
       hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      labels: {"input_placeholder":"输入关键词进行搜索","hits_empty":"找不到关于「 ${query} 」的文章","hits_stats":"共找到 ${hits} 篇文章，花了 ${time} ms"}
     }
   };
 </script>
@@ -256,9 +258,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -356,14 +392,15 @@
           
             
               <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/37.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="37.html" itemprop="commentCount"></span>
-                </a>
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
               </span>
+              
+                <a href="/37.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="37.html" itemprop="commentsCount"></span>
+                </a>
+              
             
           
 
@@ -405,7 +442,7 @@
 <h3 id="Pods"><a href="#Pods" class="headerlink" title="Pods"></a>Pods</h3><p>以往我们都是 <code>Pod install</code> 后就无脑把 Pods 全部提交到本地，然后推远程仓库，导致远程仓库项目非常大，clone 花了很长的时间，每次 <code>pod update</code> 后 Push 代码也非常久。后来考虑了一下，觉得 Pods 这个目录可以不提交，甚至 <code>Podfile.lock</code> 这个文件也可以不要，继而 <code>.xcworkspace</code> 也可以不要，只要留一个 <code>Podfile</code> 文件，并在里面指定每个依赖库的版本号就够了，只要团队的每个人都有 CocoaPods 环境，每个人 <code>pod install</code> 后，在本地就能跑起来了。</p>
 <h3 id="xcuserdata"><a href="#xcuserdata" class="headerlink" title="xcuserdata"></a>xcuserdata</h3><p>在项目根目录下，一般有 <code>.xcodeproj</code> 和 <code>.xcworkspace</code>文件，显示包内容可以看到都有 <code>xcuserdata</code> 文件夹，然后里面放着 <code>username.xcuserdata</code>文件夹，再点进去就是 <code>UserInterfaceState.xcuserstate</code> 和 <code>Breakpoints_v2.xcbkptlist</code>，这些都属于用户个人设置，像断点记录这样的文件肯定不能提交上去合并的，没有意义，也容易导致冲突。</p>
 <h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>另外看情况将不需要的文件名，文件后缀，或者目录都可以添加到 .gitignore 中。比如做持续构建的时候，如果 Build 目录在项目中，可以将 <code>Build</code> 目录 ignore 掉，也可以将 <code>*.ipa</code> 忽略掉，空文件夹不会被跟踪，效果一样。具体可以根据自身项目需要进行修改。</p>
-<h3 id="结合以上几点，简便配置"><a href="#结合以上几点，简便配置" class="headerlink" title="结合以上几点，简便配置"></a>结合以上几点，简便配置</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># Xcode</span></div><div class="line">.DS_Store</div><div class="line">*/build<span class="comment">/*</span></div><div class="line">*.pbxuser</div><div class="line">!default.pbxuser</div><div class="line">*.mode1v3</div><div class="line">!default.mode1v3</div><div class="line">*.mode2v3</div><div class="line">!default.mode2v3</div><div class="line">*.perspectivev3</div><div class="line">!default.perspectivev3</div><div class="line">xcuserdata</div><div class="line">profile</div><div class="line">*.moved-aside</div><div class="line">DerivedData</div><div class="line">*.hmap</div><div class="line">*.xccheckout</div><div class="line">*.xcworkspace</div><div class="line">!default.xcworkspace</div><div class="line"></div><div class="line">#CocoaPods</div><div class="line">Pods</div><div class="line">Podfile.lock</div></pre></td></tr></table></figure>
+<h3 id="结合以上几点，简便配置"><a href="#结合以上几点，简便配置" class="headerlink" title="结合以上几点，简便配置"></a>结合以上几点，简便配置</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># Xcode</span></div><div class="line">.DS_Store</div><div class="line">build</div><div class="line">report.xml</div><div class="line">*.pbxuser</div><div class="line">!<span class="keyword">default</span>.pbxuser</div><div class="line">*.mode1v3</div><div class="line">!<span class="keyword">default</span>.mode1v3</div><div class="line">*.mode2v3</div><div class="line">!<span class="keyword">default</span>.mode2v3</div><div class="line">*.perspectivev3</div><div class="line">!<span class="keyword">default</span>.perspectivev3</div><div class="line">xcuserdata</div><div class="line">*.moved-aside</div><div class="line">DerivedData</div><div class="line">.idea/</div><div class="line">*.hmap</div><div class="line">*.xccheckout</div><div class="line">*.xcworkspace</div><div class="line">!<span class="keyword">default</span>.xcworkspace</div><div class="line"></div><div class="line"><span class="meta">#CocoaPods</span></div><div class="line">Pods</div><div class="line">Podfile.lock</div><div class="line">xcschemes</div></pre></td></tr></table></figure>
 <h3 id="gitignore-io-选择自定义配置"><a href="#gitignore-io-选择自定义配置" class="headerlink" title="gitignore.io 选择自定义配置"></a>gitignore.io 选择自定义配置</h3><p>在 <a href="https://gitignore.io" target="_blank" rel="external">gitignore.io</a> 输入需要配置的语言，会自动生成一份配置。比如，输入 Objective-C 和 Swift 会帮助你生成下面的配置。</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># Created by https://www.gitignore.io/api/swift,objective-c</span></div><div class="line"></div><div class="line"><span class="meta">### Objective-C ###</span></div><div class="line"><span class="meta"># Xcode</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore &amp; Swift.gitignore</span></div><div class="line"></div><div class="line"><span class="meta">## Build generated</span></div><div class="line">build/</div><div class="line">DerivedData/</div><div class="line"></div><div class="line"><span class="meta">## Various settings</span></div><div class="line">*.pbxuser</div><div class="line">!<span class="keyword">default</span>.pbxuser</div><div class="line">*.mode1v3</div><div class="line">!<span class="keyword">default</span>.mode1v3</div><div class="line">*.mode2v3</div><div class="line">!<span class="keyword">default</span>.mode2v3</div><div class="line">*.perspectivev3</div><div class="line">!<span class="keyword">default</span>.perspectivev3</div><div class="line">xcuserdata/</div><div class="line"></div><div class="line"><span class="meta">## Other</span></div><div class="line">*.moved-aside</div><div class="line">*.xccheckout</div><div class="line">*.xcscmblueprint</div><div class="line"></div><div class="line"><span class="meta">## Obj-C/Swift specific</span></div><div class="line">*.hmap</div><div class="line">*.ipa</div><div class="line">*.dSYM.zip</div><div class="line">*.dSYM</div><div class="line"></div><div class="line"><span class="meta"># CocoaPods</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># We recommend against adding the Pods directory to your .gitignore. However</span></div><div class="line"><span class="meta"># you should judge for yourself, the pros and cons are mentioned at:</span></div><div class="line"><span class="meta"># https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># Pods/</span></div><div class="line"></div><div class="line"><span class="meta"># Carthage</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># Add this line if you want to avoid checking in source code from Carthage dependencies.</span></div><div class="line"><span class="meta"># Carthage/Checkouts</span></div><div class="line"></div><div class="line">Carthage/Build</div><div class="line"></div><div class="line"><span class="meta"># fastlane</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the</span></div><div class="line"><span class="meta"># screenshots whenever they are needed.</span></div><div class="line"><span class="meta"># For more information about the recommended setup visit:</span></div><div class="line"><span class="meta"># https://docs.fastlane.tools/best-practices/source-control/#source-control</span></div><div class="line"></div><div class="line">fastlane/report.xml</div><div class="line">fastlane/Preview.html</div><div class="line">fastlane/screenshots</div><div class="line">fastlane/test_output</div><div class="line"></div><div class="line"><span class="meta"># Code Injection</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># After new code Injection tools there's a generated folder /iOSInjectionProject</span></div><div class="line"><span class="meta"># https://github.com/johnno1962/injectionforxcode</span></div><div class="line"></div><div class="line">iOSInjectionProject/</div><div class="line"></div><div class="line"><span class="meta">### Objective-C Patch ###</span></div><div class="line"></div><div class="line"><span class="meta">### Swift ###</span></div><div class="line"><span class="meta"># Xcode</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore &amp; Swift.gitignore</span></div><div class="line"></div><div class="line"><span class="meta">## Build generated</span></div><div class="line"></div><div class="line"><span class="meta">## Various settings</span></div><div class="line"></div><div class="line"><span class="meta">## Other</span></div><div class="line"></div><div class="line"><span class="meta">## Obj-C/Swift specific</span></div><div class="line"></div><div class="line"><span class="meta">## Playgrounds</span></div><div class="line">timeline.xctimeline</div><div class="line">playground.xcworkspace</div><div class="line"></div><div class="line"><span class="meta"># Swift Package Manager</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.</span></div><div class="line"><span class="meta"># Packages/</span></div><div class="line"><span class="meta"># Package.pins</span></div><div class="line">.build/</div><div class="line"></div><div class="line"><span class="meta"># CocoaPods</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># We recommend against adding the Pods directory to your .gitignore. However</span></div><div class="line"><span class="meta"># you should judge for yourself, the pros and cons are mentioned at:</span></div><div class="line"><span class="meta"># https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># Pods/</span></div><div class="line"></div><div class="line"><span class="meta"># Carthage</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># Add this line if you want to avoid checking in source code from Carthage dependencies.</span></div><div class="line"><span class="meta"># Carthage/Checkouts</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="meta"># fastlane</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta"># It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the</span></div><div class="line"><span class="meta"># screenshots whenever they are needed.</span></div><div class="line"><span class="meta"># For more information about the recommended setup visit:</span></div><div class="line"><span class="meta"># https://docs.fastlane.tools/best-practices/source-control/#source-control</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="meta"># End of https://www.gitignore.io/api/swift,objective-c</span></div></pre></td></tr></table></figure>
 <p>这个配置自动生成了很多注释和一些不太必要的配置，所以直接使用上面提供的简便配置即可。</p>
@@ -439,6 +476,21 @@ $ git push
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Bingo
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://bingozb.github.io/37.html" title="iOS项目的.gitignore配置">https://bingozb.github.io/37.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 MIT 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
 
       
     </div>
@@ -500,9 +552,7 @@ $ git push
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="37.html"
-           data-title="iOS项目的.gitignore配置" data-url="https://bingozb.github.io/37.html">
-      </div>
+      <div id="SOHUCS"></div>
     
   </div>
 
@@ -550,7 +600,7 @@ $ git push
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -572,7 +622,7 @@ $ git push
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -581,8 +631,53 @@ $ git push
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/bingozb" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/bingozb" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-git"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/bingo_v587" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/profile.php?id=100013406670597" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
           
         </div>
 
@@ -726,50 +821,367 @@ $ git push
 
   
 
+
   
-    
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytcdzpa3';
+      var conf = 'c0c6117021d1cea9f11629100efd8446';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"bingozb"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      $('#local-search-input').focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
   </script>
-
-  
-    
-      
-      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.1"></script>
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
 
 
@@ -885,6 +1297,21 @@ $ git push
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
