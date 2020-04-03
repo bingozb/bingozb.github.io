@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Centos 6 x86 minimal 部署 | Bingo&#39;s Blog</title>
+    <meta name="description" content="Stay Hungry, Stay Foolish.">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.020971cc.css" as="style"><link rel="preload" href="/assets/js/app.8ed35a37.js" as="script"><link rel="preload" href="/assets/js/3.695ccf48.js" as="script"><link rel="preload" href="/assets/js/1.72451e64.js" as="script"><link rel="preload" href="/assets/js/28.efcc45bd.js" as="script"><link rel="prefetch" href="/assets/js/10.ac9f6fe2.js"><link rel="prefetch" href="/assets/js/11.ba0afe19.js"><link rel="prefetch" href="/assets/js/12.a33d4658.js"><link rel="prefetch" href="/assets/js/13.a3232462.js"><link rel="prefetch" href="/assets/js/14.fdcc7a05.js"><link rel="prefetch" href="/assets/js/15.14f18a85.js"><link rel="prefetch" href="/assets/js/16.098123f9.js"><link rel="prefetch" href="/assets/js/17.1d8534fb.js"><link rel="prefetch" href="/assets/js/18.ac7ac90d.js"><link rel="prefetch" href="/assets/js/19.dba81478.js"><link rel="prefetch" href="/assets/js/20.3de75668.js"><link rel="prefetch" href="/assets/js/21.8e810587.js"><link rel="prefetch" href="/assets/js/22.ec63eb6f.js"><link rel="prefetch" href="/assets/js/23.c3ecd4a6.js"><link rel="prefetch" href="/assets/js/24.a65f210b.js"><link rel="prefetch" href="/assets/js/25.b9a8f9df.js"><link rel="prefetch" href="/assets/js/26.66c114e4.js"><link rel="prefetch" href="/assets/js/27.cb724002.js"><link rel="prefetch" href="/assets/js/29.6ed5ffc8.js"><link rel="prefetch" href="/assets/js/30.7785cd18.js"><link rel="prefetch" href="/assets/js/31.d4493e07.js"><link rel="prefetch" href="/assets/js/32.d0928207.js"><link rel="prefetch" href="/assets/js/33.c51ec923.js"><link rel="prefetch" href="/assets/js/34.3c8926e2.js"><link rel="prefetch" href="/assets/js/35.df8acaad.js"><link rel="prefetch" href="/assets/js/36.1d634a40.js"><link rel="prefetch" href="/assets/js/37.e68feb0d.js"><link rel="prefetch" href="/assets/js/38.a6673bcb.js"><link rel="prefetch" href="/assets/js/39.0e53e5fc.js"><link rel="prefetch" href="/assets/js/4.780f642a.js"><link rel="prefetch" href="/assets/js/40.f2608dc9.js"><link rel="prefetch" href="/assets/js/41.6ee8b618.js"><link rel="prefetch" href="/assets/js/42.d589a3cb.js"><link rel="prefetch" href="/assets/js/43.a784f2e1.js"><link rel="prefetch" href="/assets/js/44.0da22098.js"><link rel="prefetch" href="/assets/js/45.0334d7fc.js"><link rel="prefetch" href="/assets/js/46.53e3c7a5.js"><link rel="prefetch" href="/assets/js/47.3f8886ae.js"><link rel="prefetch" href="/assets/js/48.137e40c8.js"><link rel="prefetch" href="/assets/js/49.519d579c.js"><link rel="prefetch" href="/assets/js/5.7c1696c6.js"><link rel="prefetch" href="/assets/js/50.a497d8ce.js"><link rel="prefetch" href="/assets/js/51.d409492b.js"><link rel="prefetch" href="/assets/js/52.0170eb94.js"><link rel="prefetch" href="/assets/js/53.186b396a.js"><link rel="prefetch" href="/assets/js/54.a5450e7c.js"><link rel="prefetch" href="/assets/js/55.67223b15.js"><link rel="prefetch" href="/assets/js/56.bc3cf071.js"><link rel="prefetch" href="/assets/js/57.ffbd356c.js"><link rel="prefetch" href="/assets/js/58.fdd60f72.js"><link rel="prefetch" href="/assets/js/59.62dd4caf.js"><link rel="prefetch" href="/assets/js/6.90b74947.js"><link rel="prefetch" href="/assets/js/60.a35dc1ec.js"><link rel="prefetch" href="/assets/js/61.269cd428.js"><link rel="prefetch" href="/assets/js/62.870c34a9.js"><link rel="prefetch" href="/assets/js/63.301c4b5f.js"><link rel="prefetch" href="/assets/js/64.3ca255e6.js"><link rel="prefetch" href="/assets/js/65.138ab076.js"><link rel="prefetch" href="/assets/js/66.e44aa831.js"><link rel="prefetch" href="/assets/js/67.d6111311.js"><link rel="prefetch" href="/assets/js/68.ac30ef3b.js"><link rel="prefetch" href="/assets/js/7.855825cc.js"><link rel="prefetch" href="/assets/js/8.ee2d506e.js"><link rel="prefetch" href="/assets/js/9.60876906.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.020971cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-5bf89314><div data-v-5bf89314><div id="loader-wrapper" class="loading-wrapper" data-v-c01c9394 data-v-5bf89314 data-v-5bf89314><div class="loader-main" data-v-c01c9394><div data-v-c01c9394></div><div data-v-c01c9394></div><div data-v-c01c9394></div><div data-v-c01c9394></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-2fdd79b4 data-v-5bf89314 data-v-5bf89314><h3 class="title" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4>Bingo's Blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4><input type="password" value="" data-v-2fdd79b4> <span data-v-2fdd79b4>Konck! Knock!</span> <button data-v-2fdd79b4>OK</button></label> <div class="footer" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4><span data-v-2fdd79b4><i class="iconfont reco-theme" data-v-2fdd79b4></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-2fdd79b4>vuePress-theme-reco</a></span> <span data-v-2fdd79b4><i class="iconfont reco-copyright" data-v-2fdd79b4></i> <a data-v-2fdd79b4><span data-v-2fdd79b4>Bingo</span>
+            
+          <span data-v-2fdd79b4>2016 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-5bf89314><header class="navbar" data-v-5bf89314><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Bingo's Blog" class="logo"> <span class="site-name">Bingo's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/解决方案/" class="nav-link"><i class="iconfont undefined"></i>
+  解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/categories/战斗笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  战斗笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DKKIT/" class="nav-link"><i class="iconfont undefined"></i>
+  DKKIT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作总结/" class="nav-link"><i class="iconfont undefined"></i>
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/about/index.html" class="nav-link"><i class="iconfont reco-message"></i>
+  About me
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/bingozb" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bf89314></div> <aside class="sidebar" data-v-5bf89314><div class="personal-info-wrapper" data-v-77052908><img src="/avatar.jpg" alt="author-avatar" class="personal-img" data-v-77052908> <h3 class="name" data-v-77052908>
+    Bingo
+  </h3> <div class="num" data-v-77052908><div data-v-77052908><h3 data-v-77052908>56</h3> <h6 data-v-77052908>文章</h6></div> <div data-v-77052908><h3 data-v-77052908>26</h3> <h6 data-v-77052908>标签</h6></div></div> <hr data-v-77052908></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/解决方案/" class="nav-link"><i class="iconfont undefined"></i>
+  解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/categories/战斗笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  战斗笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DKKIT/" class="nav-link"><i class="iconfont undefined"></i>
+  DKKIT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作总结/" class="nav-link"><i class="iconfont undefined"></i>
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/about/index.html" class="nav-link"><i class="iconfont reco-message"></i>
+  About me
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/bingozb" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Centos 6 x86 minimal 部署</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/default/28.html#前言" class="sidebar-link">前言</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/default/28.html#更改-ssh-密码" class="sidebar-link">更改 SSH 密码</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/28.html#缘由" class="sidebar-link">缘由</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#更改" class="sidebar-link">更改</a></li></ul></li><li><a href="/views/default/28.html#更改-ssh-端口" class="sidebar-link">更改 SSH 端口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/28.html#缘由-2" class="sidebar-link">缘由</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#更改-2" class="sidebar-link">更改</a></li></ul></li><li><a href="/views/default/28.html#ssh-免密登录" class="sidebar-link">SSH 免密登录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/28.html#缘由-3" class="sidebar-link">缘由</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#配置" class="sidebar-link">配置</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#免密登录" class="sidebar-link">免密登录</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#alias-快捷登录" class="sidebar-link">alias 快捷登录</a></li></ul></li><li><a href="/views/default/28.html#安装环境" class="sidebar-link">安装环境</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/28.html#选择" class="sidebar-link">选择</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#安装" class="sidebar-link">安装</a></li></ul></li><li><a href="/views/default/28.html#更改防火墙" class="sidebar-link">更改防火墙</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/28.html#查看防火墙状态" class="sidebar-link">查看防火墙状态</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#添加需要开放的端口" class="sidebar-link">添加需要开放的端口</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#重启服务" class="sidebar-link">重启服务</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#查看防火墙状态-2" class="sidebar-link">查看防火墙状态</a></li></ul></li><li><a href="/views/default/28.html#修改数据库" class="sidebar-link">修改数据库</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/28.html#缘由-4" class="sidebar-link">缘由</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#修改" class="sidebar-link">修改</a></li></ul></li><li><a href="/views/default/28.html#let-s-encrypt-https" class="sidebar-link">Let's Encrypt - HTTPS</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/28.html#缘由-5" class="sidebar-link">缘由</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#安装-2" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/views/default/28.html#补充" class="sidebar-link">补充</a></li></ul></li><li><a href="/views/default/28.html#后话" class="sidebar-link">后话</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-2fdd79b4 data-v-5bf89314><h3 class="title" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4>Centos 6 x86 minimal 部署</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4><input type="password" value="" data-v-2fdd79b4> <span data-v-2fdd79b4>Konck! Knock!</span> <button data-v-2fdd79b4>OK</button></label> <div class="footer" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4><span data-v-2fdd79b4><i class="iconfont reco-theme" data-v-2fdd79b4></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-2fdd79b4>vuePress-theme-reco</a></span> <span data-v-2fdd79b4><i class="iconfont reco-copyright" data-v-2fdd79b4></i> <a data-v-2fdd79b4><span data-v-2fdd79b4>Bingo</span>
+            
+          <span data-v-2fdd79b4>2016 - </span>
+          2020
+        </a></span></div></div> <div data-v-5bf89314><main class="page"><div class="page-title" style="display:none;"><h1>Centos 6 x86 minimal 部署</h1> <hr> <div data-v-1d3b109c><i class="iconfont reco-account" data-v-1d3b109c><span data-v-1d3b109c>Bingo</span></i> <i class="iconfont reco-date" data-v-1d3b109c><span data-v-1d3b109c>2017-03-05 23:25:05</span></i> <i class="iconfont reco-eye" data-v-1d3b109c><span id="/views/default/28.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-1d3b109c><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-1d3b109c><span class="tag-item" data-v-1d3b109c>
+      L
+    </span><span class="tag-item" data-v-1d3b109c>
+      i
+    </span><span class="tag-item" data-v-1d3b109c>
+      n
+    </span><span class="tag-item" data-v-1d3b109c>
+      u
+    </span><span class="tag-item" data-v-1d3b109c>
+      x
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>一直用着阿里云 ECS ，说实话确实挺好的，只可惜太贵了，而且在国内很多事情做不了。最近在找国外的 VPS，最终选择了搬瓦工。以前一直用 Ubuntu，搬瓦工默认安装了32位 Centos 6，果断重装系统选择 minimal 版，小巧、纯净、安装快、启动快、适合作自动部署。接下来需要快速部署服务器让它运作起来。</p> <h2 id="更改-ssh-密码"><a href="#更改-ssh-密码" class="header-anchor">#</a> 更改 SSH 密码</h2> <h3 id="缘由"><a href="#缘由" class="header-anchor">#</a> 缘由</h3> <p>默认的随机密码记不住，也懒得保存，干脆就改掉它吧，至少在做免密登录前不用一直拷贝粘贴那么麻烦。</p> <h3 id="更改"><a href="#更改" class="header-anchor">#</a> 更改</h3> <p>用 root 用户登录后，敲 <code>passwd</code> 命令。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ passwd
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后敲两遍新密码即可。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>更改用户 root 的密码 。
+新的 密码：
+重新输入新的 密码：
+passwd： 所有的身份验证令牌已经成功更新。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="更改-ssh-端口"><a href="#更改-ssh-端口" class="header-anchor">#</a> 更改 SSH 端口</h2> <h3 id="缘由-2"><a href="#缘由-2" class="header-anchor">#</a> 缘由</h3> <p>出于安全考虑，搬瓦工 vps 的 SSH 默认端口不是22，而是一个随机数，例如28766。如果不改回22，用 ssh 连服务器或者 scp 传文件的命令都要加上 -p 28766 或 -P 28766，虽然可以用 alias 来解决这个问题，但还是有点烦。</p> <h3 id="更改-2"><a href="#更改-2" class="header-anchor">#</a> 更改</h3> <ul><li>更改配置文件</li></ul> <p>修改 ssh 服务配置文件，路径一般是<code>/etc/ssh/sshd_config</code>。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ vi /etc/ssh/sshd_config
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Centos 6 x86 minimal 上默认没有 vim，只有 vi。</p> <p>翻到最下面，将 Port 改为 22。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>PermitRootLogin yes
+Port 22
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>重启 sshd 服务</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ service sshd restart
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>刷新 kiwivm 管理面板，已经可以看到 SSH Port 改为 22。</p> <h2 id="ssh-免密登录"><a href="#ssh-免密登录" class="header-anchor">#</a> SSH 免密登录</h2> <h3 id="缘由-3"><a href="#缘由-3" class="header-anchor">#</a> 缘由</h3> <p>每次登录自己的 VPS 还要输入密码，很麻烦，通过配置公钥来让自己免密登录服务器。每次都敲 ssh 命令也有点烦，结合 alias 实现<strong>快捷免密登录</strong>。</p> <h3 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h3> <ul><li><p>在本地生成公钥/私钥对，如果已经生成过了可以忽略。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ ssh-keygen -t rsa -P ''
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>-P 表示密码，-P '' 就表示空密码，也可以不用 -P 参数，这样就要三次回车，用 -P 就一次回车。</p> <p>按 Command + Shift + H 可以进到个人文件夹，会生成 <code>.ssh</code>文件夹，里面有私钥<code>id_rsa</code>和公钥<code>id_rsa.pub</code>。</p></li> <li><p>服务器上修改 SSH 配置文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ vi /etc/ssh/sshd_config
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>找到下面三行并将每行开头的注释#去掉</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#RSAAuthentication yes
+#PubkeyAuthentication yes
+#AuthorizedKeysFile      .ssh/authorized_keys
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li><p>在服务器上新建<code>.ssh</code> 目录</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ mkdir .ssh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>把本地的公钥<code>id_rsa.pub</code>复制到服务器上的<code>.ssh</code>里</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ scp /Users/bingo/.ssh/id_rsa.pub root@blog.bingo.ren:/root/.ssh/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>服务器上把公钥添加到<code>.ssh/authorized_keys</code>文件里</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ cat /root/.ssh/id_rsa.pub &gt;&gt; /root/.ssh/authorized_keys
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>授权</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ chmod 700 /root/.ssh
+$ chmod 600 /root/.ssh/authorized_keys
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li><p>重启 sshd</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ service sshd restart
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li></ul> <h3 id="免密登录"><a href="#免密登录" class="header-anchor">#</a> 免密登录</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ ssh root@blog.bingo.ren
+The authenticity of host 'blog.bingo.ren (45.78.46.239)' can't be established.
+RSA key fingerprint is SHA256:YPO7cW9V0UXbVapNs3wh47JrpkolJWPNJUBFd9p2s64.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>敲 yes 回车，以后就可以免密登录了。</p> <h3 id="alias-快捷登录"><a href="#alias-快捷登录" class="header-anchor">#</a> alias 快捷登录</h3> <p>按 Command + Shift + H 进入个人目录，找到 .bashrc，如果没有则先创建，然后添加一行：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>alias vps='ssh root@45.78.46.239'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>如果在同个目录下没有 .bash_profile 文件，则创建它，然后添加一行：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>source ~/.bashrc
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>最后在终端执行即可</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ source ~/.bashrc
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>vps 就是 'ssh root@45.78.46.239' 的别名，以后在终端直接敲 vps 回车，跟敲 ssh root@45.78.46.239 然后回车的效果是一样的。</p> <p>结合前面配置公钥实现的免密登录，实现了 <strong>ssh 快捷免密登录服务器</strong>。</p> <h2 id="安装环境"><a href="#安装环境" class="header-anchor">#</a> 安装环境</h2> <h3 id="选择"><a href="#选择" class="header-anchor">#</a> 选择</h3> <p>根据需要安装环境，有四种组合模式。</p> <table><thead><tr><th>组合模式</th> <th>说明</th></tr></thead> <tbody><tr><td>LNMP</td> <td>安装Nginx，不安装Apache、Tomcat（系统运行php-fpm进程）</td></tr> <tr><td>LAMP</td> <td>不安装Nginx、Tomcat，安装Apache（无php-fpm进程，php以模块形式加载在Apache中）</td></tr> <tr><td>LNMPA</td> <td>安装Nginx、Apache、不安装Tomcat（该模式下，静态资源由Nginx处理，PHP由Apache处理，无php-fpm进程，php以模块形式加载在Apache中）</td></tr> <tr><td>LNMT</td> <td>安装Nginx和Tomcat，不安装Apache（该模式下，静态资源由Nginx处理，JAVA由Tomcat处理，可安装PHP，支持多语言环境，同时运行php、java）</td></tr></tbody></table> <ul><li>PHP 用户推荐使用 LNMP 模式</li> <li>JAVA 用户推荐使用 LNMT 模式</li> <li>PHP + JAVA 用户使用 LNMT 模式</li></ul> <p>什么？你在问我为什么不用 Apache？党派之争，请自行百度谷歌，我简单说一下个人的观点，Nginx 是事件驱动，轻量级，抗并发；而 Apache 相比之下为了稳定耗了太多内存，这在低配的服务器上是无法忍受的。</p> <p>我的标准：</p> <ul><li>有一定量的并发需求的时候，服务器配置内存低的用 Nginx，内存几十个G的用 Apache。</li> <li>静态请求多的用 Nginx，动态请求多的用 Apache。</li></ul> <p>结合我的标准，由于我的 vps 配置较低，暂时放的静态文件会较多比如个人博客，再加上我是 Java 用户，LNMT 是我的唯一选择，静态用 Nginx 处理，动态用 Tomcat 处理。</p> <p>假设你是一名 PHP 用户，请参考以下两篇文章。</p> <ul><li><a href="http://www.nowamagic.net/librarys/veda/detail/1319" target="_blank" rel="noopener noreferrer">《概念了解：CGI，FastCGI，PHP-CGI与PHP-FPM》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://zyan.cc/nginx_php_v6/" target="_blank" rel="noopener noreferrer">《Nginx 0.8.x + PHP 5.2.13(FastCGI)搭建胜过 Apache 十倍的Web服务器(第6版)》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <p>第二篇是国内最早详细介绍 Nginx + PHP 的文章， 作者从2007年的第1版，一直更新到2010年的第6版。我不知道现在为什么还有 PHP 开发人员没听过 FastCGI，不知道 php-fpm 进程。也罢，等某天我想转 PHP 了再去捣鼓这些问题吧。</p> <h3 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h3> <ul><li><p>安装 Screen</p> <ul><li>CentOS / Redhat</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ yum -y install wget screen curl python
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>Debian / Ubuntu</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ apt-get -y install wget screen curl python
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>下载 oneinstack</p> <ul><li>阿里云用户下载</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ wget http://aliyun-oss.linuxeye.com/oneinstack-full.tar.gz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>包含源码，国内外均可下载</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ wget http://mirrors.linuxeye.com/oneinstack-full.tar.gz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>不包含源码，建议仅国外主机下载</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ wget http://mirrors.linuxeye.com/oneinstack.tar.gz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>解压 oneinstack</p></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ tar xzf oneinstack.tar.gz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>开始安装</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ cd oneinstack    
+$ screen -S oneinstack 
+$ ./install.sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>如果网路出现中断，可以执行命令<code>screen -r oneinstack</code>重新连接安装窗口。</p> <p>出现这个界面就正式开始安装组件了。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#######################################################################
+#       OneinStack for CentOS/RadHat 5+ Debian 6+ and Ubuntu 12+      #
+#       For more information please visit https://oneinstack.com      #
+#######################################################################
+
+Please input SSH port(Default: 22): 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>SSH 端口，默认22，前面已经将端口改为22了，可以直接回车。接下去根据前面选择好的组合模式进行选择即可，下面是我安装 LNMT 的组合。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Do you want to install Web server? [y/n]: y
+
+Please select Nginx server:
+        1. Install Nginx
+        2. Install Tengine
+        3. Install OpenResty
+        4. Do not install
+Please input a number:(Default 1 press Enter) 1
+
+Please select Apache server:
+        1. Install Apache-2.4
+        2. Install Apache-2.2
+        3. Do not install
+Please input a number:(Default 3 press Enter) 3
+
+Please select tomcat server:
+        1. Install Tomcat-8
+        2. Install Tomcat-7
+        3. Install Tomcat-6
+        4. Do not install
+Please input a number:(Default 4 press Enter) 1
+
+Please select JDK version:
+        1. Install JDK-1.8
+        2. Install JDK-1.7
+Please input a number:(Default 2 press Enter) 1
+
+Do you want to install Database? [y/n]: y
+
+Please select a version of the Database:
+         1. Install MySQL-5.7
+         2. Install MySQL-5.6
+         3. Install MySQL-5.5
+         4. Install MariaDB-10.1
+         5. Install MariaDB-10.0
+         6. Install MariaDB-5.5
+         7. Install Percona-5.7
+         8. Install Percona-5.6
+         9. Install Percona-5.5
+        10. Install AliSQL-5.6
+Please input a number:(Default 2 press Enter) 1
+Please input the root password of database: xxxxxx
+
+Please choose installation of the database:
+        1. Install database from binary package.
+        2. Install database from source package.
+Please input a number:(Default 1 press Enter) 1
+
+Do you want to install PHP? [y/n]: n
+
+Do you want to install Pure-FTPd? [y/n]: y
+
+Do you want to install redis? [y/n]: y
+
+Do you want to install memcached? [y/n]: y
+
+Do you want to install HHVM? [y/n]: n
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><p>到这里为止，人工操作就结束了，接下来就等脚本自动安装完毕。</p> <p>安装完成会显示安装信息，最好拷贝保存起来。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>####################Congratulations########################
+Total OneinStack Install Time: 11 minutes
+
+Nginx install dir:              /usr/local/nginx
+
+Tomcat install dir:             /usr/local/tomcat
+
+Database install dir:           /usr/local/mysql
+Database data dir:              /data/mysql
+Database user:                  root
+Database password:              xxxxxx
+
+Pure-FTPd install dir:          /usr/local/pureftpd
+Create FTP virtual script:      ./pureftpd_vhost.sh
+
+redis install dir:              /usr/local/redis
+
+memcached install dir:          /usr/local/memcached
+
+index url:                      http://45.78.46.239/
+
+Please restart the server and see if the services start up fine.
+Do you want to restart OS ? [y/n]: y
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>重启完成，环境就安装完毕了。</p> <h2 id="更改防火墙"><a href="#更改防火墙" class="header-anchor">#</a> 更改防火墙</h2> <h3 id="查看防火墙状态"><a href="#查看防火墙状态" class="header-anchor">#</a> 查看防火墙状态</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ service iptables status
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>可以看到过滤器里只允许了21、22、80、443这几个端口，并做了一些并发限制。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Table: filter
+Chain INPUT (policy DROP)
+num  target     prot opt source               destination         
+1    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           
+2    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED 
+3    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           state NEW tcp dpt:22 
+4    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           state NEW tcp dpt:80 
+5    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           state NEW tcp dpt:21 
+6    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           state NEW tcp dpts:20000:30000 
+7    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           state NEW tcp dpt:443 
+8    ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           limit: avg 1/sec burst 10 
+9    ACCEPT     all  -f  0.0.0.0/0            0.0.0.0/0           limit: avg 100/sec burst 100 
+10   syn-flood  tcp  --  0.0.0.0/0            0.0.0.0/0           tcp flags:0x17/0x02 
+11   REJECT     all  --  0.0.0.0/0            0.0.0.0/0           reject-with icmp-host-prohibited 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="添加需要开放的端口"><a href="#添加需要开放的端口" class="header-anchor">#</a> 添加需要开放的端口</h3> <p>例如 MySQL 的3306，Tomcat 的8080（如果已经用 nginx 把 80 端口反向代理到了 8080，就不需要开放 8080 端口了），加上一些自己希望开放的端口，例如我经常会开放几个端口例如 6666、7777、8888 等来做 webhook 自动部署。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ vi /etc/sysconfig/iptables
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>添加并保存</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 6666 -j ACCEPT
+...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="重启服务"><a href="#重启服务" class="header-anchor">#</a> 重启服务</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ service iptables restart
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="查看防火墙状态-2"><a href="#查看防火墙状态-2" class="header-anchor">#</a> 查看防火墙状态</h3> <p>再次查看防火墙状态，就可以看到过滤器新增了刚刚添加的过滤规则，接受了 3306、8080 等端口。</p> <h2 id="修改数据库"><a href="#修改数据库" class="header-anchor">#</a> 修改数据库</h2> <h3 id="缘由-4"><a href="#缘由-4" class="header-anchor">#</a> 缘由</h3> <p>一般不直接使用root用户，需要新建一个数据库用户并授权所有权限，使用这个用户来远程登录。</p> <h3 id="修改"><a href="#修改" class="header-anchor">#</a> 修改</h3> <ul><li>登录数据库</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ mysql -u root -p
+Enter password:
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>新建用户</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ CREATE USER 'bingo'@'localhost' IDENTIFIED BY 'xxxxxx';
+$ CREATE USER 'bingo'@'%' IDENTIFIED BY 'xxxxxx';
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>授权</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ GRANT ALL ON *.* TO 'bingo'@'%';
+$ GRANT ALL ON *.* TO 'bingo'@'localhost';
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>刷新系统权限表，退出</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ flush privileges;
+$ exit
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="let-s-encrypt-https"><a href="#let-s-encrypt-https" class="header-anchor">#</a> Let's Encrypt - HTTPS</h2> <h3 id="缘由-5"><a href="#缘由-5" class="header-anchor">#</a> 缘由</h3> <p>使用 Let's Encrypt 免费让网站支持 HTTPS，如果自己给移动端写接口，苹果已经强制要求 HTTPS 了，作为一个 iOS developer，部署 HTTPS 环境也是挺重要的。当然，如果你不想用免费的，可以直接去申请收费的 ssl 证书，这里就不多阐述了。</p> <h3 id="安装-2"><a href="#安装-2" class="header-anchor">#</a> 安装</h3> <p>OneinStack 已经内置 Let's Encrypt，vhost.sh 绑定域名时自动申请、绑定、自动续期（默认90天）一步到位。</p> <p><strong>安装 oneinstack，前面已经完成。</strong></p> <p><strong>安装 Let's Encrypt</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ cd oneinstack
+$ ./addons.sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>弹出选项菜单选择 <strong>7</strong>（Install/Uninstall Let's Encrypt client），然后选择 <strong>1</strong>（install）。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#######################################################################
+#       OneinStack for CentOS/RadHat 5+ Debian 6+ and Ubuntu 12+      #
+#                    Install/Uninstall Extensions                     #
+#       For more information please visit https://oneinstack.com      #
+#######################################################################
+
+What Are You Doing?
+    1. Install/Uninstall PHP opcode cache
+	2. Install/Uninstall ZendGuardLoader/ionCube PHP Extension
+	3. Install/Uninstall ImageMagick/GraphicsMagick PHP Extension
+	4. Install/Uninstall fileinfo PHP Extension
+	5. Install/Uninstall memcached/memcache
+    6. Install/Uninstall Redis
+    7. Install/Uninstall Let's Encrypt client
+    8. Install/Uninstall fail2ban 
+    q. Exit
+Please input the correct option: 7
+
+Please select an action:
+	1. install
+	2. uninstall
+Please input a number:(Default 1 press Enter) 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>安装完成后会输出一行:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Let's Encrypt client installed successfully! 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>添加虚拟主机，绑定域名</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ ./vhost.sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>SSL 选择 <strong>y</strong>，Let's Encrypt 选择 <strong>y</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#######################################################################
+#       OneinStack for CentOS/RadHat 5+ Debian 6+ and Ubuntu 12+      #
+#       For more information please visit https://oneinstack.com      #
+#######################################################################
+
+Do you want to setup SSL under Nginx? [y/n]: y
+
+Please input domain(example: www.example.com): blog.bingo.ren
+
+Please input the directory for the domain:blog.bingo.ren :
+(Default directory: /data/wwwroot/blog.bingo.ren): 
+Virtual Host Directory=/data/wwwroot/blog.bingo.ren
+
+Create Virtul Host directory......
+set permissions of Virtual Host directory......
+domain=blog.bingo.ren
+
+Do you want to add more domain name? [y/n]: n
+
+Do you want to redirect all HTTP requests to HTTPS? [y/n]: y
+
+Do you want to use a Let's Encrypt certificate? [y/n]: y
+
+Please enter Administrator Email(example: admin@example.com): bingo@dankal.cn
+
+Do you want to add hotlink protection? [y/n]: n
+
+Allow Nginx/Tengine/OpenResty access_log? [y/n]: y
+You access log file=/data/wwwlogs/blog.bingo.ren_nginx.log
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p>然后就会自动重启 Nginx 和 Tomcat 服务，最后会输出部署信息。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#######################################################################
+#       OneinStack for CentOS/RadHat 5+ Debian 6+ and Ubuntu 12+      #
+#       For more information please visit https://oneinstack.com      #
+#######################################################################
+Your domain:                  blog.bingo.ren
+Nginx Virtualhost conf:       /usr/local/nginx/conf/vhost/blog.bingo.ren.conf
+Tomcat Virtualhost conf:      /usr/local/tomcat/conf/vhost/blog.bingo.ren.xml
+Directory of:                 /data/wwwroot/blog.bingo.ren
+Let's Encrypt SSL Certificate:/etc/letsencrypt/live/blog.bingo.ren/fullchain.pem
+SSL Private Key:               /etc/letsencrypt/live/blog.bingo.ren/privkey.pem
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="补充"><a href="#补充" class="header-anchor">#</a> 补充</h3> <ul><li>绑定域名后会自动在 crontab 添加相应自动续期脚本。</li> <li>同一个 ip 在3小时内最多申请10个域名的证书。</li> <li>同一个根域名在七天内，只能注册5个证书。</li> <li>同一个子域名注册或更新都是要计算次数的。</li></ul> <h2 id="后话"><a href="#后话" class="header-anchor">#</a> 后话</h2> <p>这只是简单的部署环境，还没有部署项目和自动化脚本，我会慢慢补充，持续更新。</p></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----></main> <!----> <div style="display:none;" data-v-5bf89314 data-v-5bf89314><div class="comments-wrapper" data-v-5bf89314><div class="valine-wrapper"><div id="valine"></div></div></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-566b5166 data-v-566b5166><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-566b5166><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-566b5166></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-566b5166></path></svg></div></div></div>
+    <script src="/assets/js/app.8ed35a37.js" defer></script><script src="/assets/js/3.695ccf48.js" defer></script><script src="/assets/js/1.72451e64.js" defer></script><script src="/assets/js/28.efcc45bd.js" defer></script>
+  </body>
+</html>

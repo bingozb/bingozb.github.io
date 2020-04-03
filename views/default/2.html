@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>解决NSString stringWithFormat:参数nil时返回(null) | Bingo&#39;s Blog</title>
+    <meta name="description" content="Stay Hungry, Stay Foolish.">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.020971cc.css" as="style"><link rel="preload" href="/assets/js/app.8ed35a37.js" as="script"><link rel="preload" href="/assets/js/3.695ccf48.js" as="script"><link rel="preload" href="/assets/js/1.72451e64.js" as="script"><link rel="preload" href="/assets/js/22.ec63eb6f.js" as="script"><link rel="prefetch" href="/assets/js/10.ac9f6fe2.js"><link rel="prefetch" href="/assets/js/11.ba0afe19.js"><link rel="prefetch" href="/assets/js/12.a33d4658.js"><link rel="prefetch" href="/assets/js/13.a3232462.js"><link rel="prefetch" href="/assets/js/14.fdcc7a05.js"><link rel="prefetch" href="/assets/js/15.14f18a85.js"><link rel="prefetch" href="/assets/js/16.098123f9.js"><link rel="prefetch" href="/assets/js/17.1d8534fb.js"><link rel="prefetch" href="/assets/js/18.ac7ac90d.js"><link rel="prefetch" href="/assets/js/19.dba81478.js"><link rel="prefetch" href="/assets/js/20.3de75668.js"><link rel="prefetch" href="/assets/js/21.8e810587.js"><link rel="prefetch" href="/assets/js/23.c3ecd4a6.js"><link rel="prefetch" href="/assets/js/24.a65f210b.js"><link rel="prefetch" href="/assets/js/25.b9a8f9df.js"><link rel="prefetch" href="/assets/js/26.66c114e4.js"><link rel="prefetch" href="/assets/js/27.cb724002.js"><link rel="prefetch" href="/assets/js/28.efcc45bd.js"><link rel="prefetch" href="/assets/js/29.6ed5ffc8.js"><link rel="prefetch" href="/assets/js/30.7785cd18.js"><link rel="prefetch" href="/assets/js/31.d4493e07.js"><link rel="prefetch" href="/assets/js/32.d0928207.js"><link rel="prefetch" href="/assets/js/33.c51ec923.js"><link rel="prefetch" href="/assets/js/34.3c8926e2.js"><link rel="prefetch" href="/assets/js/35.df8acaad.js"><link rel="prefetch" href="/assets/js/36.1d634a40.js"><link rel="prefetch" href="/assets/js/37.e68feb0d.js"><link rel="prefetch" href="/assets/js/38.a6673bcb.js"><link rel="prefetch" href="/assets/js/39.0e53e5fc.js"><link rel="prefetch" href="/assets/js/4.780f642a.js"><link rel="prefetch" href="/assets/js/40.f2608dc9.js"><link rel="prefetch" href="/assets/js/41.6ee8b618.js"><link rel="prefetch" href="/assets/js/42.d589a3cb.js"><link rel="prefetch" href="/assets/js/43.a784f2e1.js"><link rel="prefetch" href="/assets/js/44.0da22098.js"><link rel="prefetch" href="/assets/js/45.0334d7fc.js"><link rel="prefetch" href="/assets/js/46.53e3c7a5.js"><link rel="prefetch" href="/assets/js/47.3f8886ae.js"><link rel="prefetch" href="/assets/js/48.137e40c8.js"><link rel="prefetch" href="/assets/js/49.519d579c.js"><link rel="prefetch" href="/assets/js/5.7c1696c6.js"><link rel="prefetch" href="/assets/js/50.a497d8ce.js"><link rel="prefetch" href="/assets/js/51.d409492b.js"><link rel="prefetch" href="/assets/js/52.0170eb94.js"><link rel="prefetch" href="/assets/js/53.186b396a.js"><link rel="prefetch" href="/assets/js/54.a5450e7c.js"><link rel="prefetch" href="/assets/js/55.67223b15.js"><link rel="prefetch" href="/assets/js/56.bc3cf071.js"><link rel="prefetch" href="/assets/js/57.ffbd356c.js"><link rel="prefetch" href="/assets/js/58.fdd60f72.js"><link rel="prefetch" href="/assets/js/59.62dd4caf.js"><link rel="prefetch" href="/assets/js/6.90b74947.js"><link rel="prefetch" href="/assets/js/60.a35dc1ec.js"><link rel="prefetch" href="/assets/js/61.269cd428.js"><link rel="prefetch" href="/assets/js/62.870c34a9.js"><link rel="prefetch" href="/assets/js/63.301c4b5f.js"><link rel="prefetch" href="/assets/js/64.3ca255e6.js"><link rel="prefetch" href="/assets/js/65.138ab076.js"><link rel="prefetch" href="/assets/js/66.e44aa831.js"><link rel="prefetch" href="/assets/js/67.d6111311.js"><link rel="prefetch" href="/assets/js/68.ac30ef3b.js"><link rel="prefetch" href="/assets/js/7.855825cc.js"><link rel="prefetch" href="/assets/js/8.ee2d506e.js"><link rel="prefetch" href="/assets/js/9.60876906.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.020971cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-5bf89314><div data-v-5bf89314><div id="loader-wrapper" class="loading-wrapper" data-v-c01c9394 data-v-5bf89314 data-v-5bf89314><div class="loader-main" data-v-c01c9394><div data-v-c01c9394></div><div data-v-c01c9394></div><div data-v-c01c9394></div><div data-v-c01c9394></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-2fdd79b4 data-v-5bf89314 data-v-5bf89314><h3 class="title" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4>Bingo's Blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4><input type="password" value="" data-v-2fdd79b4> <span data-v-2fdd79b4>Konck! Knock!</span> <button data-v-2fdd79b4>OK</button></label> <div class="footer" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4><span data-v-2fdd79b4><i class="iconfont reco-theme" data-v-2fdd79b4></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-2fdd79b4>vuePress-theme-reco</a></span> <span data-v-2fdd79b4><i class="iconfont reco-copyright" data-v-2fdd79b4></i> <a data-v-2fdd79b4><span data-v-2fdd79b4>Bingo</span>
+            
+          <span data-v-2fdd79b4>2016 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-5bf89314><header class="navbar" data-v-5bf89314><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Bingo's Blog" class="logo"> <span class="site-name">Bingo's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/解决方案/" class="nav-link"><i class="iconfont undefined"></i>
+  解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/categories/战斗笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  战斗笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DKKIT/" class="nav-link"><i class="iconfont undefined"></i>
+  DKKIT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作总结/" class="nav-link"><i class="iconfont undefined"></i>
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/about/index.html" class="nav-link"><i class="iconfont reco-message"></i>
+  About me
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/bingozb" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bf89314></div> <aside class="sidebar" data-v-5bf89314><div class="personal-info-wrapper" data-v-77052908><img src="/avatar.jpg" alt="author-avatar" class="personal-img" data-v-77052908> <h3 class="name" data-v-77052908>
+    Bingo
+  </h3> <div class="num" data-v-77052908><div data-v-77052908><h3 data-v-77052908>56</h3> <h6 data-v-77052908>文章</h6></div> <div data-v-77052908><h3 data-v-77052908>26</h3> <h6 data-v-77052908>标签</h6></div></div> <hr data-v-77052908></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/解决方案/" class="nav-link"><i class="iconfont undefined"></i>
+  解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/categories/战斗笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  战斗笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DKKIT/" class="nav-link"><i class="iconfont undefined"></i>
+  DKKIT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作总结/" class="nav-link"><i class="iconfont undefined"></i>
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/about/index.html" class="nav-link"><i class="iconfont reco-message"></i>
+  About me
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/bingozb" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>解决NSString stringWithFormat:参数nil时返回(null)</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/default/2.html#前言" class="sidebar-link">前言</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/default/2.html#解决" class="sidebar-link">解决</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/2.html#方法一、使用宏" class="sidebar-link">方法一、使用宏</a></li><li class="sidebar-sub-header"><a href="/views/default/2.html#方法二、使用分类" class="sidebar-link">方法二、使用分类</a></li><li class="sidebar-sub-header"><a href="/views/default/2.html#头脑风暴" class="sidebar-link">头脑风暴</a></li><li class="sidebar-sub-header"><a href="/views/default/2.html#方法三、在-nsstring-的分类中直接重写-stringwithformat-（不推荐）" class="sidebar-link">方法三、在 NSString 的分类中直接重写 stringWithFormat:（不推荐）</a></li></ul></li><li><a href="/views/default/2.html#补充" class="sidebar-link">补充</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/default/2.html#后话" class="sidebar-link">后话</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-2fdd79b4 data-v-5bf89314><h3 class="title" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4>解决NSString stringWithFormat:参数nil时返回(null)</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4><input type="password" value="" data-v-2fdd79b4> <span data-v-2fdd79b4>Konck! Knock!</span> <button data-v-2fdd79b4>OK</button></label> <div class="footer" style="display:none;" data-v-2fdd79b4 data-v-2fdd79b4><span data-v-2fdd79b4><i class="iconfont reco-theme" data-v-2fdd79b4></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-2fdd79b4>vuePress-theme-reco</a></span> <span data-v-2fdd79b4><i class="iconfont reco-copyright" data-v-2fdd79b4></i> <a data-v-2fdd79b4><span data-v-2fdd79b4>Bingo</span>
+            
+          <span data-v-2fdd79b4>2016 - </span>
+          2020
+        </a></span></div></div> <div data-v-5bf89314><main class="page"><div class="page-title" style="display:none;"><h1>解决NSString stringWithFormat:参数nil时返回(null)</h1> <hr> <div data-v-1d3b109c><i class="iconfont reco-account" data-v-1d3b109c><span data-v-1d3b109c>Bingo</span></i> <i class="iconfont reco-date" data-v-1d3b109c><span data-v-1d3b109c>2017-01-05 00:15:19</span></i> <i class="iconfont reco-eye" data-v-1d3b109c><span id="/views/default/2.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-1d3b109c><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-1d3b109c><span class="tag-item" data-v-1d3b109c>
+      i
+    </span><span class="tag-item" data-v-1d3b109c>
+      O
+    </span><span class="tag-item" data-v-1d3b109c>
+      S
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>NSString 这个类，在 OC 中很常见，<code>[NSString stringWithFormat:]</code> 这个方法我们都很熟悉了。但是也有很常见的一个问题，那就是参数为空的时候会返回<code>@&quot;(null)&quot;</code>。</p> <p><strong>举个例子</strong></p> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>label.text = [NSString stringWithFormat:@&quot;所在医院 : %@&quot;, self.doctor.hospital];
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>当 doctor.hospital 为 nil 时，显示“所在医院 : (null)”，理所当然 (null) 这样的字眼不应该出现在界面上被用户看见。</p> <h2 id="解决"><a href="#解决" class="header-anchor">#</a> 解决</h2> <h3 id="方法一、使用宏"><a href="#方法一、使用宏" class="header-anchor">#</a> 方法一、使用宏</h3> <h4 id="定义一个宏，写到pch文件中"><a href="#定义一个宏，写到pch文件中" class="header-anchor">#</a> 定义一个宏，写到PCH文件中</h4> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>#define DKNonnullString(str) ((str &amp;&amp; [str isKindOfClass:[NSString class]] &amp;&amp; str.length) ? str : @&quot;&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="可变参数每一个都包上这个宏"><a href="#可变参数每一个都包上这个宏" class="header-anchor">#</a> 可变参数每一个都包上这个宏</h4> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>label.text = [NSString stringWithFormat:@&quot;所在医院 : %@&quot;, DKNonnullString(self.doctor.hospital)];
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="原理"><a href="#原理" class="header-anchor">#</a> 原理</h4> <p>先判断参数是否为 nil，如果是，就把它替换为空字符串，再进行 format。</p> <h4 id="缺点"><a href="#缺点" class="header-anchor">#</a> 缺点</h4> <p>虽然可以实现，但这样子每次调用的时候每个参数都要包一个宏，感觉很麻烦！网上逛了一圈包括 stackoverflow 有人提到都是这样子解决的。程序猿是无法忍受这种重复累赘的，至少我是这样子的，那有没有更酷的办法呢？</p><p></p> <h3 id="方法二、使用分类"><a href="#方法二、使用分类" class="header-anchor">#</a> 方法二、使用分类</h3> <p>跳到头文件 NSString.h 中，可以看到与之相关的方法。</p> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>+ (instancetype)stringWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
+- (instancetype)initWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
+- (instancetype)initWithFormat:(NSString *)format arguments:(va_list)argList NS_FORMAT_FUNCTION(1,0);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>首先需要了解 initWithFormat: 和 stringWithFormat: 的区别</strong></p> <table><thead><tr><th>initWithFormat:</th> <th>stringWithFormat:</th></tr></thead> <tbody><tr><td>实例方法</td> <td>类方法</td></tr> <tr><td>非autoRelease，MRC下需要手动release</td> <td>autoRelease，推荐使用</td></tr></tbody></table> <p>在MRC下这两种方式生成的字符串在内存管理上面有点差异，现在的项目绝大部分都是ARC了，所以两者可以说是没有区别的，也就是两者之间可以互换！这是重点！</p> <p><strong>再来看看 arguments</strong></p> <p>可以看到参数类型是 va_list，这货一看就不像是 OC 的东西，应该是 C 语言或  C++的。网上一搜，果然跟猜想的一样。它的意思是参数列表，除了 va_list，还有 va_start、va_arg、va_end、NS_FORMAT_FUNCTION，都是 C 语言提供的处理变长参数的方法。</p> <p><strong>结合这两点，给 NSString 添加一个分类，添加 dk_stringWithFormat: 方法。</strong></p> <h4 id="nsstring-dkextension-h"><a href="#nsstring-dkextension-h" class="header-anchor">#</a> NSString+DKExtension.h</h4> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>/**
+ 格式化字符串，并过滤格式化后的字符串中的(null)
+
+ @param format 格式
+ @return 格式化后，过滤掉@&quot;(null)&quot;的字符串
+ */
+ + (instancetype)dk_stringWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="nsstring-dkextension-m"><a href="#nsstring-dkextension-m" class="header-anchor">#</a> NSString+DKExtension.m</h4> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>+ (instancetype)dk_stringWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2)
+{
+    va_list arglist;
+    va_start(arglist, format);
+    NSString *outStr = [[NSString alloc] initWithFormat:format arguments:arglist];
+    va_end(arglist);
+        
+    if ([outStr containsString:@&quot;(null)&quot;])
+        return [outStr stringByReplacingOccurrencesOfString:@&quot;(null)&quot; withString:@&quot;&quot;];
+    return outStr;
+}
+    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><strong>参数说明</strong></p> <table><thead><tr><th>方法</th> <th>说明</th></tr></thead> <tbody><tr><td>NS_FORMAT_FUNCTION(1, 2)</td> <td>告诉编译器，索引1处的参数是一个格式化字符串，而实际参数从索引2处开始</td></tr> <tr><td>va_list</td> <td>定义一个指向个数可变的参数列表的指针，这个参数列表指针就是 arglist</td></tr> <tr><td>va_start</td> <td>使参数列表指针指向 format，从 format 的下一个元素开始</td></tr> <tr><td>va_end</td> <td>结束，清空 va_list 可变参数列表</td></tr></tbody></table> <p><strong>调用</strong></p> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>NSString *nilStr = [NSString stringWithFormat:@&quot;过滤前的[nil] -&gt; [%@] &quot;,nil];
+NSLog(@&quot;%@&quot;,nilStr);
+
+NSString *nonullStr = [NSString dk_stringWithFormat:@&quot;过滤后的[nil] -&gt; [%@] &quot;,nil];
+NSLog(@&quot;%@&quot;,nonullStr);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>打印</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>2017-01-05 00:25:19.486 DKExtensionExample[82935:4502309] 过滤前的[nil] -&gt; [(null)] 
+2017-01-05 00:25:19.487 DKExtensionExample[82935:4502309] 过滤后的[nil] -&gt; [] 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="原理-2"><a href="#原理-2" class="header-anchor">#</a> 原理</h4> <p>添加一个方法，使用 C 语言提供的处理变长参数的方法获取参数列表，调用 initWithFormat:arguments: 方法，把格式化后的字符串在 return 前做过滤处理，把<code>@&quot;(null)&quot;</code>全部替换成<code>@&quot;&quot;</code>。</p> <h3 id="头脑风暴"><a href="#头脑风暴" class="header-anchor">#</a> 头脑风暴</h3> <p>原本我有个想法，是在 NSString 的分类中直接重写 stringWithFormat:，即下面的方法三，原因有两个。</p> <ol><li>在分类中重写系统的方法，无需引入分类文件，load 完毕就生效。</li> <li>调用方式不需要改，依然是 <code>[NSString stringWithFormat:]</code>，不用改变习惯。</li></ol> <h3 id="方法三、在-nsstring-的分类中直接重写-stringwithformat-（不推荐）"><a href="#方法三、在-nsstring-的分类中直接重写-stringwithformat-（不推荐）" class="header-anchor">#</a> 方法三、在 NSString 的分类中直接重写 stringWithFormat:<em>（不推荐）</em></h3> <p>NSString+DKExtension.m</p> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>/**
+ * 重写系统方法，替换返回的字符串中的 (null) 为空字符串
+ *  @&quot;(null)&quot; -&gt; @&quot;&quot;
+ */
++ (instancetype)stringWithFormat:(NSString *)format, ...
+{
+    va_list arglist; 
+    va_start(arglist, format); 
+    NSString *outStr = [[NSString alloc] initWithFormat:format arguments:arglist];
+    va_end(arglist); 
+ 
+    if ([outStr containsString:@&quot;(null)&quot;]) 
+        return [outStr stringByReplacingOccurrencesOfString:@&quot;(null)&quot; withString:@&quot;&quot;];
+    return outStr;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>在 Demo 中测试没有问题，但引入到实际项目后发现，在某个很正常的界面就崩溃了。</p> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>2017-01-05 21:17:02.087 YouYun[85270:4528882] exceptionString:name:
+NSInvalidArgumentException
+reason:
+Attempt to mutate immutable object with replaceOccurrencesOfString:withString:options:range:
+callStackSymbols:
+0   CoreFoundation                      0x000000010f58634b __exceptionPreprocess + 171
+1   libobjc.A.dylib                     0x000000010e8b721e objc_exception_throw + 48
+2   CoreFoundation                      0x000000010f5ef265 +[NSException raise:format:] + 197
+3   CoreFoundation                      0x000000010f4ec91b -[__NSCFString replaceOccurrencesOfString:withString:options:range:] + 123
+...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>除了我们手动调用这个方法，系统自己也会调用这个方法，而且频率是极高的。分析一下异常信息，无效参数异常，原因应该是系统调用某个方法的时候需要一个参数是可变的字符串 NSMutableString, 而我们重写的方法中的 <code>replaceOccurrencesOfString:withString:options:range:</code> 返回了一个不可变的 NSString。</p> <p>知道原因后，稍做修改。</p> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>+ (instancetype)stringWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2)
+{
+    va_list arglist;
+    va_start(arglist, format);
+    NSMutableString *outStr = [[NSMutableString alloc] initWithFormat:format arguments:arglist];
+    va_end(arglist);
+    
+    if ([outStr containsString:@&quot;(null)&quot;]) 
+        return [NSMutableString stringWithString:[outStr stringByReplacingOccurrencesOfString:@&quot;(null)&quot; withString:@&quot;&quot;]];
+    return outStr;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>然后跟往常一样调用 <code>[NSString stringWithFormat:]</code> 即可。</p> <p>也许有人会说，重写了系统的方法，会不会带来其它地方的未知问题。我个人觉得还好吧，虽然重写了 <code>stringWithFormat:</code> 这个方法把返回的字符串中的 @&quot;(null)&quot; 过滤掉了，但实际上还是调用系统的另一个方法 <code>initWithFormat:arguments:</code>。</p> <p>思前想后，最终我还是放弃了这个解决方案，为什么？</p> <p>正如上面所说的，系统自己也会调用这个方法，比如下面几个常见的系统调用 format 后的字符串。</p> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>[] -firstOrDefault: (null) success:error:
+
+ClearButton_state:0_variant:0(null)
+
+37.000000-12-1-UIExtendedGrayColorSpace 1 1-(null)-{0, 0}-CW-OutlineShadowOFF
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>系统这是在干嘛就不管它了，但说不定苹果还对某些返回的含有@&quot;(null)&quot;的字符串进行了一系列处理呢？比如拿到@&quot;(null)&quot;的 Range，或者判断某个参数 format 后是不是为@&quot;(null)&quot;，然后可能做相对应的处理（纯粹猜想）。如果被我们过滤掉了，也许真的会打乱系统的逻辑导致出现一些莫名其妙的 bug。（暂时没遇到过，如果真想这么玩，需要广大 Coder 在不同项目不同环境下进行检验，目前没有这个人力资本）</p> <p>所以，我还是决定不去重写系统的方法，就给分类加多一个方法，在我们需要的时候去调用。相对于第一种用宏对每一个参数进行判断过滤的方法来说，我是完全可以接受的。</p> <h2 id="补充"><a href="#补充" class="header-anchor">#</a> 补充</h2> <p>如果是在 MRC 下，再调用 autorelease 方法即可。</p> <div class="language-objc line-numbers-mode"><pre class="language-text"><code>NSString *outStr = [[[NSString alloc] initWithFormat:formatStr arguments:arglist] autorelease];
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="后话"><a href="#后话" class="header-anchor">#</a> 后话</h2> <p>我们整理了开发中常用的分类 <a href="https://github.com/bingozb/DKExtension" target="_blank" rel="noopener noreferrer">DKExtension<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，里面已经包含了上面所说的内容，欢迎导入我们的分类库进行开发。</p> <ul><li>支持 Cocoapods<div class="language- line-numbers-mode"><pre class="language-text"><code>pod 'DKExtension.h'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>Download or Usage 请移步 GitHub, 如果有什么更好的解决方案或者建议，欢迎 GitHub Issues。</li></ul></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----></main> <!----> <div style="display:none;" data-v-5bf89314 data-v-5bf89314><div class="comments-wrapper" data-v-5bf89314><div class="valine-wrapper"><div id="valine"></div></div></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-566b5166 data-v-566b5166><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-566b5166><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-566b5166></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-566b5166></path></svg></div></div></div>
+    <script src="/assets/js/app.8ed35a37.js" defer></script><script src="/assets/js/3.695ccf48.js" defer></script><script src="/assets/js/1.72451e64.js" defer></script><script src="/assets/js/22.ec63eb6f.js" defer></script>
+  </body>
+</html>
