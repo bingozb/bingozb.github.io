@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>开始写PHP接口 | Bingo&#39;s Blog</title>
+    <meta name="description" content="Stay Hungry, Stay Foolish.">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.85941b03.css" as="style"><link rel="preload" href="/assets/js/app.7aaa1664.js" as="script"><link rel="preload" href="/assets/js/3.89e13237.js" as="script"><link rel="preload" href="/assets/js/1.70547aa9.js" as="script"><link rel="preload" href="/assets/js/66.1e879a4c.js" as="script"><link rel="prefetch" href="/assets/js/10.3c6fb3a5.js"><link rel="prefetch" href="/assets/js/11.2eeb7c65.js"><link rel="prefetch" href="/assets/js/12.0a44cf1b.js"><link rel="prefetch" href="/assets/js/13.aa08a638.js"><link rel="prefetch" href="/assets/js/14.042f1e6f.js"><link rel="prefetch" href="/assets/js/15.32876def.js"><link rel="prefetch" href="/assets/js/16.1fdaf0b8.js"><link rel="prefetch" href="/assets/js/17.82265f8b.js"><link rel="prefetch" href="/assets/js/18.62757d19.js"><link rel="prefetch" href="/assets/js/19.949d2427.js"><link rel="prefetch" href="/assets/js/20.b6853c64.js"><link rel="prefetch" href="/assets/js/21.e073a224.js"><link rel="prefetch" href="/assets/js/22.acdd8a05.js"><link rel="prefetch" href="/assets/js/23.1c12c2b0.js"><link rel="prefetch" href="/assets/js/24.54454a6e.js"><link rel="prefetch" href="/assets/js/25.d2758f74.js"><link rel="prefetch" href="/assets/js/26.d5a0d37c.js"><link rel="prefetch" href="/assets/js/27.c37293c1.js"><link rel="prefetch" href="/assets/js/28.ef63d378.js"><link rel="prefetch" href="/assets/js/29.1966f087.js"><link rel="prefetch" href="/assets/js/30.10015c74.js"><link rel="prefetch" href="/assets/js/31.6ec21ed3.js"><link rel="prefetch" href="/assets/js/32.a8988bcc.js"><link rel="prefetch" href="/assets/js/33.4f622d3b.js"><link rel="prefetch" href="/assets/js/34.8186f970.js"><link rel="prefetch" href="/assets/js/35.03906af1.js"><link rel="prefetch" href="/assets/js/36.986560a3.js"><link rel="prefetch" href="/assets/js/37.0680f970.js"><link rel="prefetch" href="/assets/js/38.38be24ae.js"><link rel="prefetch" href="/assets/js/39.170073ea.js"><link rel="prefetch" href="/assets/js/4.fef5f850.js"><link rel="prefetch" href="/assets/js/40.cc610acc.js"><link rel="prefetch" href="/assets/js/41.6aca6093.js"><link rel="prefetch" href="/assets/js/42.5e9ba970.js"><link rel="prefetch" href="/assets/js/43.29ea7bac.js"><link rel="prefetch" href="/assets/js/44.3f4e6d55.js"><link rel="prefetch" href="/assets/js/45.027d8c45.js"><link rel="prefetch" href="/assets/js/46.9eaa323b.js"><link rel="prefetch" href="/assets/js/47.6171bf2c.js"><link rel="prefetch" href="/assets/js/48.0a9f5884.js"><link rel="prefetch" href="/assets/js/49.ad07e6f6.js"><link rel="prefetch" href="/assets/js/5.5714c074.js"><link rel="prefetch" href="/assets/js/50.81737364.js"><link rel="prefetch" href="/assets/js/51.c294f19e.js"><link rel="prefetch" href="/assets/js/52.f23fb563.js"><link rel="prefetch" href="/assets/js/53.fbc7a1ff.js"><link rel="prefetch" href="/assets/js/54.ad412bc2.js"><link rel="prefetch" href="/assets/js/55.4d67d273.js"><link rel="prefetch" href="/assets/js/56.c826367d.js"><link rel="prefetch" href="/assets/js/57.9d36fff4.js"><link rel="prefetch" href="/assets/js/58.3d8b0217.js"><link rel="prefetch" href="/assets/js/59.561acd47.js"><link rel="prefetch" href="/assets/js/6.66b43321.js"><link rel="prefetch" href="/assets/js/60.28356680.js"><link rel="prefetch" href="/assets/js/61.bad972f7.js"><link rel="prefetch" href="/assets/js/62.9332576a.js"><link rel="prefetch" href="/assets/js/63.c9f53550.js"><link rel="prefetch" href="/assets/js/64.a1a45c9a.js"><link rel="prefetch" href="/assets/js/65.e783b999.js"><link rel="prefetch" href="/assets/js/67.733e1cf5.js"><link rel="prefetch" href="/assets/js/68.11696a9a.js"><link rel="prefetch" href="/assets/js/69.7dd57ce0.js"><link rel="prefetch" href="/assets/js/7.18d02750.js"><link rel="prefetch" href="/assets/js/70.96d0d3d5.js"><link rel="prefetch" href="/assets/js/8.14d68426.js"><link rel="prefetch" href="/assets/js/9.3e7df72d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.85941b03.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-21b9510f><div data-v-21b9510f><div id="loader-wrapper" class="loading-wrapper" data-v-71fac282 data-v-21b9510f data-v-21b9510f><div class="loader-main" data-v-71fac282><div data-v-71fac282></div><div data-v-71fac282></div><div data-v-71fac282></div><div data-v-71fac282></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-6cb76055 data-v-21b9510f data-v-21b9510f><h3 class="title" style="display:none;" data-v-6cb76055 data-v-6cb76055>Bingo's Blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cb76055 data-v-6cb76055><input type="password" value="" data-v-6cb76055> <span data-v-6cb76055>Konck! Knock!</span> <button data-v-6cb76055>OK</button></label> <div class="footer" style="display:none;" data-v-6cb76055 data-v-6cb76055><span data-v-6cb76055><i class="iconfont reco-theme" data-v-6cb76055></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cb76055>vuePress-theme-reco</a></span> <span data-v-6cb76055><i class="iconfont reco-copyright" data-v-6cb76055></i> <a data-v-6cb76055><span data-v-6cb76055>Bingo</span>
+            
+          <span data-v-6cb76055>2016 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-21b9510f><header class="navbar" data-v-21b9510f><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Bingo's Blog" class="logo"> <span class="site-name">Bingo's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/解决方案/" class="nav-link"><i class="iconfont undefined"></i>
+  解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/categories/战斗笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  战斗笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DKKIT/" class="nav-link"><i class="iconfont undefined"></i>
+  DKKIT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作总结/" class="nav-link"><i class="iconfont undefined"></i>
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/about/index.html" class="nav-link"><i class="iconfont reco-message"></i>
+  About me
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/bingozb" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-21b9510f></div> <aside class="sidebar" data-v-21b9510f><div class="personal-info-wrapper" data-v-77ccc048><img src="/avatar.jpg" alt="author-avatar" class="personal-img" data-v-77ccc048> <h3 class="name" data-v-77ccc048>
+    Bingo
+  </h3> <div class="num" data-v-77ccc048><div data-v-77ccc048><h3 data-v-77ccc048>58</h3> <h6 data-v-77ccc048>Article</h6></div> <div data-v-77ccc048><h3 data-v-77ccc048>28</h3> <h6 data-v-77ccc048>Tag</h6></div></div> <hr data-v-77ccc048></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/解决方案/" class="nav-link"><i class="iconfont undefined"></i>
+  解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/categories/战斗笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  战斗笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DKKIT/" class="nav-link"><i class="iconfont undefined"></i>
+  DKKIT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作总结/" class="nav-link"><i class="iconfont undefined"></i>
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/about/index.html" class="nav-link"><i class="iconfont reco-message"></i>
+  About me
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/bingozb" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>开始写PHP接口</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/default/65.html#目录结构" class="sidebar-link">目录结构</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/default/65.html#配置" class="sidebar-link">配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/65.html#修改应用配置" class="sidebar-link">修改应用配置</a></li><li class="sidebar-sub-header"><a href="/views/default/65.html#修改数据库配置" class="sidebar-link">修改数据库配置</a></li></ul></li><li><a href="/views/default/65.html#创建数据库" class="sidebar-link">创建数据库</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/default/65.html#开始写代码" class="sidebar-link">开始写代码</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/65.html#model" class="sidebar-link">Model</a></li><li class="sidebar-sub-header"><a href="/views/default/65.html#controller" class="sidebar-link">Controller</a></li></ul></li><li><a href="/views/default/65.html#未完待续……" class="sidebar-link">未完待续……</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-6cb76055 data-v-21b9510f><h3 class="title" style="display:none;" data-v-6cb76055 data-v-6cb76055>开始写PHP接口</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cb76055 data-v-6cb76055><input type="password" value="" data-v-6cb76055> <span data-v-6cb76055>Konck! Knock!</span> <button data-v-6cb76055>OK</button></label> <div class="footer" style="display:none;" data-v-6cb76055 data-v-6cb76055><span data-v-6cb76055><i class="iconfont reco-theme" data-v-6cb76055></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cb76055>vuePress-theme-reco</a></span> <span data-v-6cb76055><i class="iconfont reco-copyright" data-v-6cb76055></i> <a data-v-6cb76055><span data-v-6cb76055>Bingo</span>
+            
+          <span data-v-6cb76055>2016 - </span>
+          2020
+        </a></span></div></div> <div data-v-21b9510f><main class="page"><div class="page-title" style="display:none;"><h1>开始写PHP接口</h1> <hr> <div data-v-c4ddd85a><i class="iconfont reco-account" data-v-c4ddd85a><span data-v-c4ddd85a>Bingo</span></i> <i class="iconfont reco-date" data-v-c4ddd85a><span data-v-c4ddd85a>2018-01-14 13:29:06</span></i> <!----> <i class="iconfont reco-tag tags" data-v-c4ddd85a><span class="tag-item" data-v-c4ddd85a>
+      MacOS
+    </span><span class="tag-item" data-v-c4ddd85a>
+      PHP
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div class="custom-block tip"><p>开始用 ThinkPHP5 框架写 Web 接口，实现对数据库表的增删改查，以及返回 Json 报文。</p></div> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <p>首先我们进入用 <code>compose create-project</code> 创建出来的项目，查看一下目录结构。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>www  WEB部署目录（或者子目录）
+├─application           应用目录
+│  ├─common             公共模块目录（可以更改）
+│  ├─module_name        模块目录
+│  │  ├─common.php      模块函数文件
+│  │  ├─controller      控制器目录
+│  │  ├─model           模型目录
+│  │  ├─view            视图目录
+│  │  ├─config          配置目录
+│  │  └─ ...            更多类库目录
+│  │
+│  ├─command.php        命令行定义文件
+│  ├─common.php         公共函数文件
+│  └─tags.php           应用行为扩展定义文件
+│
+├─config                应用配置目录
+│  ├─module_name        模块配置目录
+│  │  ├─database.php    数据库配置
+│  │  ├─cache           缓存配置
+│  │  └─ ...            
+│  │
+│  ├─app.php            应用配置
+│  ├─cache.php          缓存配置
+│  ├─cookie.php         Cookie配置
+│  ├─database.php       数据库配置
+│  ├─log.php            日志配置
+│  ├─session.php        Session配置
+│  ├─template.php       模板引擎配置
+│  └─trace.php          Trace配置
+│
+├─route                 路由定义目录
+│  ├─route.php          路由定义
+│  └─...                更多
+│
+├─public                WEB目录（对外访问目录）
+│  ├─index.php          入口文件
+│  ├─router.php         快速测试文件
+│  └─.htaccess          用于apache的重写
+│
+├─thinkphp              框架系统目录
+│  ├─lang               语言文件目录
+│  ├─library            框架类库目录
+│  │  ├─think           Think类库包目录
+│  │  └─traits          系统Trait目录
+│  │
+│  ├─tpl                系统模板目录
+│  ├─base.php           基础定义文件
+│  ├─convention.php     框架惯例配置文件
+│  ├─helper.php         助手函数文件
+│  └─logo.png           框架LOGO文件
+│
+├─extend                扩展类库目录
+├─runtime               应用的运行时目录（可写，可定制）
+├─vendor                第三方类库目录（Composer依赖库）
+├─build.php             自动生成定义文件（参考）
+├─composer.json         composer 定义文件
+├─LICENSE.txt           授权说明文件
+├─README.md             README 文件
+├─think                 命令行入口文件
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br></div></div><p>目录非常清晰，可以看得出是 MVC 的架构设计模式，框架就是框架，已经自动生成了很多封装好的代码，我们在开始写业务逻辑代码之前，需要先更改一些配置。</p> <h2 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>├─config（应用配置目录）
+│  ├─app.php            应用配置
+│  ├─cache.php          缓存配置
+│  ├─cookie.php         Cookie配置
+│  ├─database.php       数据库配置
+│  ├─log.php            日志配置
+│  ├─session.php        Session配置
+│  ├─template.php       模板引擎配置
+│  ├─trace.php          Trace配置
+│  └─ ...               更多配置文件
+│  
+├─route（路由目录）
+│  ├─route.php          路由定义文件
+│  └─ ...               更多路由定义文件
+│  
+├─application （应用目录）
+│  └─module （模块目录）
+│     └─config（模块配置目录）
+│     	 ├─app.php            应用配置
+│     	 ├─cache.php          缓存配置
+│     	 ├─cookie.php         Cookie配置
+│     	 ├─database.php       数据库配置
+│     	 ├─log.php            日志配置
+│     	 ├─session.php        Session配置
+│     	 ├─template.php       模板引擎配置
+│     	 ├─trace.php          Trace配置
+│  	 └─ ...               更多配置文件
+│  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="修改应用配置"><a href="#修改应用配置" class="header-anchor">#</a> 修改应用配置</h3> <p>修改应用配置文件 <code>config/app.php</code></p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token comment">// 应用调试模式</span>
+<span class="token single-quoted-string string">'app_debug'</span>              <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean constant">true</span><span class="token punctuation">,</span>
+<span class="token comment">// 默认输出类型</span>
+<span class="token single-quoted-string string">'default_return_type'</span>    <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'json'</span><span class="token punctuation">,</span>
+<span class="token comment">// 使用注解路由</span>
+<span class="token single-quoted-string string">'route_annotation'</span>       <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean constant">true</span><span class="token punctuation">,</span>
+<span class="token comment">// 显示错误信息</span>
+<span class="token single-quoted-string string">'show_error_msg'</span>         <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean constant">true</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="修改数据库配置"><a href="#修改数据库配置" class="header-anchor">#</a> 修改数据库配置</h3> <p>修改数据库配置文件 <code>config/database.php</code></p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token comment">// 服务器地址</span>
+<span class="token single-quoted-string string">'hostname'</span>        <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'127.0.0.1'</span><span class="token punctuation">,</span>
+<span class="token comment">// 数据库名</span>
+<span class="token single-quoted-string string">'database'</span>        <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'demo'</span><span class="token punctuation">,</span>
+<span class="token comment">// 用户名</span>
+<span class="token single-quoted-string string">'username'</span>        <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'root'</span><span class="token punctuation">,</span>
+<span class="token comment">// 密码</span>
+<span class="token single-quoted-string string">'password'</span>        <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'123456'</span><span class="token punctuation">,</span>
+<span class="token comment">// 端口</span>
+<span class="token single-quoted-string string">'hostport'</span>        <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'3306'</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="创建数据库"><a href="#创建数据库" class="header-anchor">#</a> 创建数据库</h2> <p>我们先用 navicat 连接数据库服务，然后新建一个数据库，名称为 <code>demo</code>，字符集选 <code>utf-8</code>。</p> <p>接着我们建一个用户表 <code>user</code>，添加以下字段：</p> <table><thead><tr><th style="text-align:center;">字段</th> <th style="text-align:center;">类型(长度)</th> <th style="text-align:center;">描述</th></tr></thead> <tbody><tr><td style="text-align:center;">id</td> <td style="text-align:center;">int(0)</td> <td style="text-align:center;">用户唯一标识</td></tr> <tr><td style="text-align:center;">username</td> <td style="text-align:center;">varchar(32)</td> <td style="text-align:center;">用户名</td></tr> <tr><td style="text-align:center;">password</td> <td style="text-align:center;">varchar(32)</td> <td style="text-align:center;">密码</td></tr> <tr><td style="text-align:center;">name</td> <td style="text-align:center;">varchar(32)</td> <td style="text-align:center;">姓名</td></tr> <tr><td style="text-align:center;">gender</td> <td style="text-align:center;">bit(1)</td> <td style="text-align:center;">性别</td></tr> <tr><td style="text-align:center;">age</td> <td style="text-align:center;">int(0)</td> <td style="text-align:center;">年龄</td></tr> <tr><td style="text-align:center;">mobile</td> <td style="text-align:center;">int(0)</td> <td style="text-align:center;">手机号码</td></tr> <tr><td style="text-align:center;">create_time</td> <td style="text-align:center;">int(0)</td> <td style="text-align:center;">创建时间</td></tr> <tr><td style="text-align:center;">update_time</td> <td style="text-align:center;">int(0)</td> <td style="text-align:center;">更新时间</td></tr></tbody></table> <p>将 <code>id</code>、<code>username</code>、<code>password</code> 设为 <code>Not Null</code>，也就是不允许字段值为空。</p> <p>最后把 <code>id</code> 设为 <code>Key</code>，也就是主键，并且设置 <code>Auto increment</code>，也就是自动递增。</p> <p>这样，一张简单的用户表就建好了。</p> <h2 id="开始写代码"><a href="#开始写代码" class="header-anchor">#</a> 开始写代码</h2> <p>MVC 设计模式，M 指的是 model，也就是模型；V 指的是 view，也就是视图层；C 是 controller，也就是控制器。</p> <p>由于我们只开发 web 接口，不需要做前端页面，所以 view 层是可以去掉的。</p> <h3 id="model"><a href="#model" class="header-anchor">#</a> Model</h3> <p>在 <code>application/index/</code> 下新建一个目录 <code>model</code>，然后在 <code>model</code> 目录下新建一个 <code>User.php</code>。</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">namespace</span> <span class="token package">app<span class="token punctuation">\</span>index<span class="token punctuation">\</span>model</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">think<span class="token punctuation">\</span>Model</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span>
+<span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>这样我们的模型就定义好了。</p> <h3 id="controller"><a href="#controller" class="header-anchor">#</a> Controller</h3> <p>在 <code>application/index/controller</code> 下新建一个 <code>User.php</code>。</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">namespace</span> <span class="token package">app<span class="token punctuation">\</span>index<span class="token punctuation">\</span>controller</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">think<span class="token punctuation">\</span>Controller</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">app<span class="token punctuation">\</span>index<span class="token punctuation">\</span>model<span class="token punctuation">\</span>User</span> <span class="token keyword">as</span> UserModel<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>由于我们新建的数据库还没有添加数据，那么我们先来实现一个用户注册接口。</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token comment">/**
+ * @param string $username 用户名
+ * @param string $password 密码
+ * @return mixed
+ * @route('user/register')
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">register</span><span class="token punctuation">(</span><span class="token variable">$username</span><span class="token punctuation">,</span> <span class="token variable">$password</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token variable">$user</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserModel</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'username'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$username</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'password'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$password</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token variable">$user</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>因为我们前面配置的时候已经设置了使用注解路由 <code>'route_annotation' =&gt; true</code>，所以原本要通过路由 <code>/index/user/register</code>（模块名/控制器名/操作名），现在只需要 <code>/user/register</code> 即可。</p> <p>注意，<code>@route('user/register')</code> 建议写在注释的最后一行，否则后面还需要一个空行。</p> <p>这样，访问这个接口，就可以获取到参数，并往数据库<code>user</code>表里插入数据了。</p> <p><img src="/images/blog/65/postman.jpg" alt="postman"></p> <p>查看数据库表，可以看到已经成功插入了一条数据。</p> <p><img src="/images/blog/65/user-1.jpg" alt="user-1"></p> <h2 id="未完待续……"><a href="#未完待续……" class="header-anchor">#</a> 未完待续……</h2></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">4/8/2020, 5:30:18 AM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-21b9510f data-v-21b9510f><div class="comments-wrapper" data-v-21b9510f><div class="valine-wrapper"><div id="valine"></div></div></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-1e128e82 data-v-1e128e82><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-1e128e82><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-1e128e82></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-1e128e82></path></svg></div></div></div>
+    <script src="/assets/js/app.7aaa1664.js" defer></script><script src="/assets/js/3.89e13237.js" defer></script><script src="/assets/js/1.70547aa9.js" defer></script><script src="/assets/js/66.1e879a4c.js" defer></script>
+  </body>
+</html>
