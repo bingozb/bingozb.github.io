@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>阿里云ECS磁盘在线扩容 | Bingo&#39;s Blog</title>
+    <meta name="description" content="Stay Hungry, Stay Foolish.">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <script type="text/javascript" src="/js/index.js"></script>
+    
+    <link rel="preload" href="/assets/css/0.styles.85941b03.css" as="style"><link rel="preload" href="/assets/js/app.b5a2a39a.js" as="script"><link rel="preload" href="/assets/js/3.89e13237.js" as="script"><link rel="preload" href="/assets/js/1.70547aa9.js" as="script"><link rel="preload" href="/assets/js/68.5363b86a.js" as="script"><link rel="prefetch" href="/assets/js/10.3c6fb3a5.js"><link rel="prefetch" href="/assets/js/11.2eeb7c65.js"><link rel="prefetch" href="/assets/js/12.f1e8e228.js"><link rel="prefetch" href="/assets/js/13.b4fb8d3d.js"><link rel="prefetch" href="/assets/js/14.a0bce502.js"><link rel="prefetch" href="/assets/js/15.1cb70647.js"><link rel="prefetch" href="/assets/js/16.672c27b0.js"><link rel="prefetch" href="/assets/js/17.82265f8b.js"><link rel="prefetch" href="/assets/js/18.62757d19.js"><link rel="prefetch" href="/assets/js/19.949d2427.js"><link rel="prefetch" href="/assets/js/20.b6853c64.js"><link rel="prefetch" href="/assets/js/21.e073a224.js"><link rel="prefetch" href="/assets/js/22.acdd8a05.js"><link rel="prefetch" href="/assets/js/23.1c12c2b0.js"><link rel="prefetch" href="/assets/js/24.54454a6e.js"><link rel="prefetch" href="/assets/js/25.3fc44b38.js"><link rel="prefetch" href="/assets/js/26.e6aba9ed.js"><link rel="prefetch" href="/assets/js/27.c37293c1.js"><link rel="prefetch" href="/assets/js/28.ef63d378.js"><link rel="prefetch" href="/assets/js/29.1966f087.js"><link rel="prefetch" href="/assets/js/30.10015c74.js"><link rel="prefetch" href="/assets/js/31.6ec21ed3.js"><link rel="prefetch" href="/assets/js/32.a8988bcc.js"><link rel="prefetch" href="/assets/js/33.4f622d3b.js"><link rel="prefetch" href="/assets/js/34.8186f970.js"><link rel="prefetch" href="/assets/js/35.03906af1.js"><link rel="prefetch" href="/assets/js/36.986560a3.js"><link rel="prefetch" href="/assets/js/37.0680f970.js"><link rel="prefetch" href="/assets/js/38.38be24ae.js"><link rel="prefetch" href="/assets/js/39.170073ea.js"><link rel="prefetch" href="/assets/js/4.fef5f850.js"><link rel="prefetch" href="/assets/js/40.cc610acc.js"><link rel="prefetch" href="/assets/js/41.6aca6093.js"><link rel="prefetch" href="/assets/js/42.5e9ba970.js"><link rel="prefetch" href="/assets/js/43.29ea7bac.js"><link rel="prefetch" href="/assets/js/44.3f4e6d55.js"><link rel="prefetch" href="/assets/js/45.027d8c45.js"><link rel="prefetch" href="/assets/js/46.9eaa323b.js"><link rel="prefetch" href="/assets/js/47.6171bf2c.js"><link rel="prefetch" href="/assets/js/48.0a9f5884.js"><link rel="prefetch" href="/assets/js/49.ad07e6f6.js"><link rel="prefetch" href="/assets/js/5.5714c074.js"><link rel="prefetch" href="/assets/js/50.81737364.js"><link rel="prefetch" href="/assets/js/51.c294f19e.js"><link rel="prefetch" href="/assets/js/52.f23fb563.js"><link rel="prefetch" href="/assets/js/53.fbc7a1ff.js"><link rel="prefetch" href="/assets/js/54.ad412bc2.js"><link rel="prefetch" href="/assets/js/55.4d67d273.js"><link rel="prefetch" href="/assets/js/56.c826367d.js"><link rel="prefetch" href="/assets/js/57.9d36fff4.js"><link rel="prefetch" href="/assets/js/58.3d8b0217.js"><link rel="prefetch" href="/assets/js/59.561acd47.js"><link rel="prefetch" href="/assets/js/6.66b43321.js"><link rel="prefetch" href="/assets/js/60.28356680.js"><link rel="prefetch" href="/assets/js/61.bad972f7.js"><link rel="prefetch" href="/assets/js/62.9332576a.js"><link rel="prefetch" href="/assets/js/63.c9f53550.js"><link rel="prefetch" href="/assets/js/64.a1a45c9a.js"><link rel="prefetch" href="/assets/js/65.87ebdaa6.js"><link rel="prefetch" href="/assets/js/66.5c2de2e5.js"><link rel="prefetch" href="/assets/js/67.c59968b0.js"><link rel="prefetch" href="/assets/js/69.52d35e43.js"><link rel="prefetch" href="/assets/js/7.18d02750.js"><link rel="prefetch" href="/assets/js/70.d6553a36.js"><link rel="prefetch" href="/assets/js/71.1d96ddef.js"><link rel="prefetch" href="/assets/js/72.24e5724d.js"><link rel="prefetch" href="/assets/js/8.14d68426.js"><link rel="prefetch" href="/assets/js/9.372062ab.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.85941b03.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-21b9510f><div data-v-21b9510f><div id="loader-wrapper" class="loading-wrapper" data-v-71fac282 data-v-21b9510f data-v-21b9510f><div class="loader-main" data-v-71fac282><div data-v-71fac282></div><div data-v-71fac282></div><div data-v-71fac282></div><div data-v-71fac282></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-6cb76055 data-v-21b9510f data-v-21b9510f><h3 class="title" style="display:none;" data-v-6cb76055 data-v-6cb76055>Bingo's Blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cb76055 data-v-6cb76055><input type="password" value="" data-v-6cb76055> <span data-v-6cb76055>Konck! Knock!</span> <button data-v-6cb76055>OK</button></label> <div class="footer" style="display:none;" data-v-6cb76055 data-v-6cb76055><span data-v-6cb76055><i class="iconfont reco-theme" data-v-6cb76055></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cb76055>vuePress-theme-reco</a></span> <span data-v-6cb76055><i class="iconfont reco-copyright" data-v-6cb76055></i> <a data-v-6cb76055><span data-v-6cb76055>Bingo</span>
+            
+          <span data-v-6cb76055>2016 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-21b9510f><header class="navbar" data-v-21b9510f><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Bingo's Blog" class="logo"> <span class="site-name">Bingo's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/解决方案/" class="nav-link"><i class="iconfont undefined"></i>
+  解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/categories/战斗笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  战斗笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DKKIT/" class="nav-link"><i class="iconfont undefined"></i>
+  DKKIT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作总结/" class="nav-link"><i class="iconfont undefined"></i>
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/about/index.html" class="nav-link"><i class="iconfont reco-message"></i>
+  About me
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/bingozb" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-21b9510f></div> <aside class="sidebar" data-v-21b9510f><div class="personal-info-wrapper" data-v-77ccc048><img src="/avatar.jpg" alt="author-avatar" class="personal-img" data-v-77ccc048> <h3 class="name" data-v-77ccc048>
+    Bingo
+  </h3> <div class="num" data-v-77ccc048><div data-v-77ccc048><h3 data-v-77ccc048>60</h3> <h6 data-v-77ccc048>文章</h6></div> <div data-v-77ccc048><h3 data-v-77ccc048>28</h3> <h6 data-v-77ccc048>标签</h6></div></div> <hr data-v-77ccc048></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/解决方案/" class="nav-link"><i class="iconfont undefined"></i>
+  解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/categories/战斗笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  战斗笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DKKIT/" class="nav-link"><i class="iconfont undefined"></i>
+  DKKIT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作总结/" class="nav-link"><i class="iconfont undefined"></i>
+  工作总结
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/about/index.html" class="nav-link"><i class="iconfont reco-message"></i>
+  About me
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/bingozb" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>阿里云ECS磁盘在线扩容</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/default/67.html#为什么需要磁盘扩容？" class="sidebar-link">为什么需要磁盘扩容？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/default/67.html#磁盘扩容" class="sidebar-link">磁盘扩容</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/default/67.html#扩展分区和文件系统" class="sidebar-link">扩展分区和文件系统</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/default/67.html#安装扩容格式化工具-growpart" class="sidebar-link">安装扩容格式化工具 growpart</a></li><li class="sidebar-sub-header"><a href="/views/default/67.html#查看现有云盘大小" class="sidebar-link">查看现有云盘大小</a></li><li class="sidebar-sub-header"><a href="/views/default/67.html#查看云盘分区大小" class="sidebar-link">查看云盘分区大小</a></li><li class="sidebar-sub-header"><a href="/views/default/67.html#分区扩容" class="sidebar-link">分区扩容</a></li><li class="sidebar-sub-header"><a href="/views/default/67.html#扩容文件系统" class="sidebar-link">扩容文件系统</a></li><li class="sidebar-sub-header"><a href="/views/default/67.html#再次查看云盘分区大小" class="sidebar-link">再次查看云盘分区大小</a></li></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-6cb76055 data-v-21b9510f><h3 class="title" style="display:none;" data-v-6cb76055 data-v-6cb76055>阿里云ECS磁盘在线扩容</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cb76055 data-v-6cb76055><input type="password" value="" data-v-6cb76055> <span data-v-6cb76055>Konck! Knock!</span> <button data-v-6cb76055>OK</button></label> <div class="footer" style="display:none;" data-v-6cb76055 data-v-6cb76055><span data-v-6cb76055><i class="iconfont reco-theme" data-v-6cb76055></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cb76055>vuePress-theme-reco</a></span> <span data-v-6cb76055><i class="iconfont reco-copyright" data-v-6cb76055></i> <a data-v-6cb76055><span data-v-6cb76055>Bingo</span>
+            
+          <span data-v-6cb76055>2016 - </span>
+          2020
+        </a></span></div></div> <div data-v-21b9510f><main class="page"><div class="page-title" style="display:none;"><h1>阿里云ECS磁盘在线扩容</h1> <hr> <div data-v-c4ddd85a><i class="iconfont reco-account" data-v-c4ddd85a><span data-v-c4ddd85a>Bingo</span></i> <i class="iconfont reco-date" data-v-c4ddd85a><span data-v-c4ddd85a>2020-02-22 15:19:48</span></i> <!----> <i class="iconfont reco-tag tags" data-v-c4ddd85a><span class="tag-item" data-v-c4ddd85a>
+      CentOS
+    </span><span class="tag-item" data-v-c4ddd85a>
+      Linux
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div class="custom-block tip"><p>记录阿里云 ECS 磁盘在线扩容过程。</p></div> <h2 id="为什么需要磁盘扩容？"><a href="#为什么需要磁盘扩容？" class="header-anchor">#</a> 为什么需要磁盘扩容？</h2> <p>我们刚购买服务器的时候，可能没办法很准确地预估将来服务器上边需要储存多少东西，就没有太关注磁盘容量，也许就没有修改默认值（40G）。</p> <p>当服务器运行一段时间，不断产生数据，有一天就会发现磁盘快占满了，那么服务器上运行的一些服务比如 Jenkins、ELK 等等，可能都会报错，无法正常运行。</p> <p>这个时候就需要进行扩容了。</p> <p><img src="/images/blog/67/before.png" alt="before"></p> <h2 id="磁盘扩容"><a href="#磁盘扩容" class="header-anchor">#</a> 磁盘扩容</h2> <p>登录阿里云控制台，选择服务器实例，再选择本实例云盘，可以看到当前服务器的云盘信息，在最右边点击更多，选择磁盘扩容。</p> <p>在跳转出来的确认订单页面中，勾选上在线扩容选项，然后输入自己想要的扩容后的容量，然后点击确认扩容，进行支付。</p> <p>这一步很简单，但这只是扩容数据盘，只是这样操作的话，扩容还没有生效，需要再做后续的操作。</p> <h2 id="扩展分区和文件系统"><a href="#扩展分区和文件系统" class="header-anchor">#</a> 扩展分区和文件系统</h2> <p>我的服务器是 Linux 系统，CentOS 7.2，这里记录对应的操作方法。</p> <h3 id="安装扩容格式化工具-growpart"><a href="#安装扩容格式化工具-growpart" class="header-anchor">#</a> 安装扩容格式化工具 growpart</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ sudo yum install -y cloud-utils-growpart
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="查看现有云盘大小"><a href="#查看现有云盘大小" class="header-anchor">#</a> 查看现有云盘大小</h3> <p>运行 <code>fdisk -l</code> 命令查看现有云盘大小。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[deploy@macrowolf ~]$ sudo fdisk -l
+
+磁盘 /dev/vda：53.7 GB, 53687091200 字节，104857600 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘标签类型：dos
+磁盘标识符：0x000d2717
+
+   设备 Boot      Start         End      Blocks   Id  System
+/dev/vda1   *        2048    83884031    41940992   83  Linux
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>返回云盘（/dev/vda）容量是50GiB。</p> <h3 id="查看云盘分区大小"><a href="#查看云盘分区大小" class="header-anchor">#</a> 查看云盘分区大小</h3> <p>运行 <code>df -h</code> 命令查看云盘分区大小。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[deploy@macrowolf ~]$ sudo df -h
+文件系统        容量  已用  可用 已用% 挂载点
+/dev/vda1        40G   36G  2.0G   95% /
+devtmpfs        3.9G     0  3.9G    0% /dev
+tmpfs           3.9G     0  3.9G    0% /dev/shm
+tmpfs           3.9G  2.1M  3.9G    1% /run
+tmpfs           3.9G     0  3.9G    0% /sys/fs/cgroup
+overlay          40G   36G  2.0G   95% /var/lib/docker/overlay2/b658787d26f70caa38ba98f9ea6672fb54c5dc8977db417920efa64dd31bcdee/merged
+//...
+tmpfs           783M     0  783M    0% /run/user/1000
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>返回分区（/dev/vda1）容量是40GiB。</p> <h3 id="分区扩容"><a href="#分区扩容" class="header-anchor">#</a> 分区扩容</h3> <p>运行 <code>growpart &lt;DeviceName&gt; &lt;PartionNumber&gt;</code> 命令，调用 <code>growpart</code> 为需要扩容的云盘和对应的第几个分区扩容。</p> <p><code>growpart /dev/vda 1</code> ，表示为系统盘的第一个分区（/dev/vda1）扩容。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[deploy@macrowolf ~]$ sudo growpart /dev/vda 1
+unexpected output in sfdisk --version [sfdisk，来自 util-linux 2.23.2]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>返回了这个报错，可以运行 <code>LANG=en_US.UTF-8</code> 切换ECS实例的字符编码类型，然后再进行尝试。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[deploy@macrowolf ~]$ LANG=en_US.UTF-8
+[deploy@macrowolf ~]$ sudo growpart /dev/vda 1
+CHANGED: partition=1 start=2048 old: size=83881984 end=83884032 new: size=104855519 end=104857567
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="扩容文件系统"><a href="#扩容文件系统" class="header-anchor">#</a> 扩容文件系统</h3> <p>运行 <code>resize2fs &lt;PartitionName&gt;</code> 命令调用 <code>resize2fs</code> 扩容文件系统。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[deploy@macrowolf ~]$ sudo resize2fs /dev/vda1
+resize2fs 1.42.9 (28-Dec-2013)
+Filesystem at /dev/vda1 is mounted on /; on-line resizing required
+old_desc_blocks = 3, new_desc_blocks = 4
+The filesystem on /dev/vda1 is now 13106939 blocks long.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="再次查看云盘分区大小"><a href="#再次查看云盘分区大小" class="header-anchor">#</a> 再次查看云盘分区大小</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>[deploy@macrowolf ~]$ sudo df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        50G   36G   12G  76% /
+devtmpfs        3.9G     0  3.9G   0% /dev
+tmpfs           3.9G     0  3.9G   0% /dev/shm
+tmpfs           3.9G  2.1M  3.9G   1% /run
+tmpfs           3.9G     0  3.9G   0% /sys/fs/cgroup
+overlay          50G   36G   12G  76% /var/lib/docker/overlay2/b658787d26f70caa38ba98f9ea6672fb54c5dc8977db417920efa64dd31bcdee/merged
+//...
+tmpfs           783M     0  783M   0% /run/user/1000
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>可以看到分区（/dev/vda1）容量已经是50GiB，表示已经成功扩容。</p> <p><img src="/images/blog/67/after.png" alt="after"></p> <p>在整个过程中，无需重启服务器，所以不会影响到服务器上正在运行的服务。</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2020/4/16 下午4:02:07</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-21b9510f data-v-21b9510f><div class="comments-wrapper" data-v-21b9510f><div class="valine-wrapper"><div id="valine"></div></div></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-1e128e82 data-v-1e128e82><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-1e128e82><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-1e128e82></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-1e128e82></path></svg></div></div></div>
+    <script src="/assets/js/app.b5a2a39a.js" defer></script><script src="/assets/js/3.89e13237.js" defer></script><script src="/assets/js/1.70547aa9.js" defer></script><script src="/assets/js/68.5363b86a.js" defer></script>
+  </body>
+</html>
